@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projektname – Info zum kommenden Projekt</title>
+  <meta name="description" content="Projektname: Alle Infos zum kommenden Projekt, kostenloses Freebie und Newsletter-Anmeldung. Jetzt informiert bleiben.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#2F5F63">
+  <link rel="canonical" href="https://benutzername.github.io/projektname/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Projektname – Info zum kommenden Projekt">
+  <meta property="og:description" content="Alle Infos zum kommenden Projekt, kostenloses Freebie und Newsletter-Anmeldung.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80">
+  <meta property="og:url" content="https://benutzername.github.io/projektname/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Projektname – Info zum kommenden Projekt">
+  <meta name="twitter:description" content="Alle Infos zum kommenden Projekt, kostenloses Freebie und Newsletter-Anmeldung.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    :root {
+      --accent: #2F5F63;
+      --accent-dark: #234749;
+      --accent-light: #e8f0f0;
+      --text: #2b2f33;
+      --text-light: #5d666c;
+      --bg: #ffffff;
+      --bg-soft: #f5f8f8;
+      --radius: 14px;
+      --shadow: 0 10px 30px rgba(35, 71, 73, 0.12);
+      --header-h: 72px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--header-h);
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', 'Segoe UI', Roboto, Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: var(--accent); }
+
+    .container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section { padding: 88px 0; }
+
+    h1, h2, h3 { line-height: 1.2; margin: 0 0 16px; color: var(--text); }
+    h2 { font-size: clamp(1.75rem, 3.5vw, 2.4rem); font-weight: 800; }
+    h3 { font-size: 1.25rem; font-weight: 700; }
+    p { margin: 0 0 16px; }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      border-radius: 999px;
+      border: 2px solid var(--accent);
+      transition: background 0.25s, transform 0.25s, box-shadow 0.25s;
+      cursor: pointer;
+    }
+    .btn:hover, .btn:focus-visible {
+      background: var(--accent-dark);
+      border-color: var(--accent-dark);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+    .btn-light { background: #fff; color: var(--accent); border-color: #fff; }
+    .btn-light:hover, .btn-light:focus-visible { background: var(--accent-light); border-color: var(--accent-light); color: var(--accent-dark); }
+
+    /* Header */
+    .site-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--header-h);
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+      z-index: 1000;
+    }
+    .header-inner {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 1.15rem;
+    }
+    .brand img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; background: #d9dfe0; }
+
+    .nav-list {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+      margin: 0; padding: 0;
+    }
+    .nav-list a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      font-size: 0.95rem;
+      padding: 6px 0;
+      border-bottom: 2px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .nav-list a:hover, .nav-list a:focus-visible { color: var(--accent); border-color: var(--accent); }
+
+    .nav-toggle {
+      display: none;
+      width: 44px; height: 44px;
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+      padding: 10px;
+      border-radius: 8px;
+    }
+    .nav-toggle span, .nav-toggle span::before, .nav-toggle span::after {
+      display: block;
+      width: 24px; height: 2px;
+      background: var(--accent);
+      border-radius: 2px;
+      position: relative;
+      transition: transform 0.3s, background 0.3s;
+    }
+    .nav-toggle span::before, .nav-toggle span::after { content: ""; position: absolute; left: 0; }
+    .nav-toggle span::before { top: -8px; }
+    .nav-toggle span::after { top: 8px; }
+    .nav-toggle[aria-expanded="true"] span { background: transparent; }
+    .nav-toggle[aria-expanded="true"] span::before { transform: translateY(8px) rotate(45deg); }
+    .nav-toggle[aria-expanded="true"] span::after { transform: translateY(-8px) rotate(-45deg); }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: calc(var(--header-h) + 40px) 0 80px;
+      color: #fff;
+      background-color: var(--accent-dark);
+      background-image:
+        linear-gradient(135deg, rgba(35, 71, 73, 0.88), rgba(47, 95, 99, 0.70)),
+        url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1920&q=80");
+      background-size: cover;
+      background-position: center;
+    }
+    .hero-content { max-width: 720px; }
+    .hero h1 {
+      color: #fff;
+      font-size: clamp(2.25rem, 6vw, 4rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+    .hero p { font-size: clamp(1.05rem, 2vw, 1.25rem); opacity: 0.95; margin-bottom: 32px; }
+    .hero .eyebrow { color: #cfe3e4; }
+
+    /* Über das Projekt */
+    .about { background: var(--bg); }
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+    .about-image img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      background: #d9dfe0;
+    }
+    .facts {
+      list-style: none;
+      padding: 0;
+      margin: 24px 0 0;
+      display: grid;
+      gap: 12px;
+    }
+    .facts li { display: flex; gap: 12px; align-items: flex-start; }
+    .facts i { color: var(--accent); margin-top: 5px; }
+
+    /* Freebie */
+    .freebie { background: var(--bg-soft); }
+    .freebie-box {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 40px;
+      align-items: center;
+      background: #fff;
+      padding: 40px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .freebie-box img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 12px;
+      background: #d9dfe0;
+    }
+
+    /* Newsletter */
+    .newsletter { background: var(--bg); text-align: center; }
+    .newsletter .intro { max-width: 620px; margin: 0 auto 32px; color: var(--text-light); }
+    .newsletter-frame {
+      background: var(--accent-light);
+      border-radius: var(--radius);
+      padding: 24px;
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    /* Footer */
+    .site-footer {
+      background: var(--accent-dark);
+      color: #dbe7e8;
+      padding: 48px 0 32px;
+      font-size: 0.95rem;
+    }
+    .footer-top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+    .footer-links a, .site-footer a { color: #dbe7e8; text-decoration: none; opacity: 0.85; }
+    .footer-links a:hover, .footer-links a:focus-visible { opacity: 1; text-decoration: underline; }
+    .social { display: flex; gap: 12px; }
+    .social a {
+      width: 40px; height: 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      transition: background 0.25s, transform 0.25s;
+    }
+    .social a:hover, .social a:focus-visible { background: rgba(255, 255, 255, 0.25); transform: translateY(-2px); }
+    .footer-bottom { padding-top: 24px; text-align: center; }
+    .footer-bottom p { margin: 0; opacity: 0.85; }
+
+    a:focus-visible, button:focus-visible { outline: 3px solid #7fb3b7; outline-offset: 3px; }
+
+    /* Tablet */
+    @media (max-width: 900px) {
+      section { padding: 64px 0; }
+      .two-col { grid-template-columns: 1fr; gap: 32px; }
+      .freebie-box { grid-template-columns: 160px 1fr; padding: 28px; gap: 28px; }
+    }
+
+    /* Smartphone */
+    @media (max-width: 768px) {
+      .nav-toggle { display: block; }
+      .nav {
+        position: absolute;
+        top: var(--header-h);
+        left: 0; right: 0;
+        background: #fff;
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease;
+      }
+      .nav.open { max-height: 400px; }
+      .nav-list { flex-direction: column; align-items: stretch; gap: 0; padding: 8px 24px 20px; }
+      .nav-list a { display: block; padding: 14px 0; border-bottom: 1px solid #eef1f1; }
+    }
+
+    @media (max-width: 560px) {
+      .freebie-box { grid-template-columns: 1fr; text-align: center; }
+      .freebie-box img { max-width: 200px; margin: 0 auto; }
+      .brand span { font-size: 1rem; }
+      .footer-top { flex-direction: column; text-align: center; }
+      .newsletter-frame { padding: 12px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#top" class="brand" aria-label="Zur Startseite von Projektname">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='88'%3E%3Crect width='100%25' height='100%25' fill='%232F5F63'/%3E%3C/svg%3E" alt="Logo Projektname" width="44" height="44">
+        <span>Projektname</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen oder schließen" aria-expanded="false" aria-controls="mainNav">
+        <span></span>
+      </button>
+      <nav class="nav" id="mainNav" aria-label="Hauptnavigation">
+        <ul class="nav-list">
+          <li><a href="#projekt">Über das Projekt</a></li>
+          <li><a href="#freebie">Freebie</a></li>
+          <li><a href="#newsletter">Newsletter</a></li>
+          <li><a href="#footer">Impressum</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="hero-content">
+          <span class="eyebrow">Demnächst verfügbar</span>
+          <h1 id="hero-title">Projektname: Hier steht Ihre große Überschrift</h1>
+          <p>Kurzer Teaser-Text: Worum geht es im Projekt und warum lohnt es sich, dabei zu sein? Starttermin: [Datum].</p>
+          <a href="#newsletter" class="btn btn-light">Zum Newsletter anmelden</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="projekt" aria-labelledby="about-title">
+      <div class="container two-col">
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" alt="Projektvorschau: Menschen arbeiten gemeinsam am Projekt" width="800" height="600" loading="lazy">
+        </div>
+        <div class="about-text">
+          <span class="eyebrow">Über das Projekt</span>
+          <h2 id="about-title">Das ist Projektname</h2>
+          <p>Kurzbeschreibung: Hier beschreiben Sie in wenigen Sätzen, worum es in Ihrem Projekt geht, wer dahintersteckt und welches Ziel verfolgt wird.</p>
+          <p>Zweiter Absatz: Hier können weitere Hintergründe, die Idee hinter dem Projekt und der Nutzen für die Zielgruppe stehen.</p>
+          <ul class="facts">
+            <li><i class="fa-solid fa-calendar-check" aria-hidden="true"></i><span>Starttermin: [Datum]</span></li>
+            <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>Ort / Format: [Ort oder Online]</span></li>
+            <li><i class="fa-solid fa-users" aria-hidden="true"></i><span>Für wen: [Zielgruppe]</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="freebie" id="freebie" aria-labelledby="freebie-title">
+      <div class="container">
+        <div class="freebie-box">
+          <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=400&q=80" alt="Vorschau des kostenlosen Freebies" width="400" height="400" loading="lazy">
+          <div>
+            <span class="eyebrow">Kostenlos für dich</span>
+            <h2 id="freebie-title">Dein Freebie: Titel des Freebies</h2>
+            <p>Kurzbeschreibung: Was bekommst du mit dem Freebie und welchen Nutzen hat es für dich? Hier steht in ein bis zwei Sätzen, worum es geht.</p>
+            <a href="#" class="btn">Freebie herunterladen</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter" id="newsletter" aria-labelledby="newsletter-title">
+      <div class="container">
+        <span class="eyebrow">Newsletter</span>
+        <h2 id="newsletter-title">Bleib auf dem Laufenden</h2>
+        <p class="intro">Trage dich in den Newsletter ein und erfahre als Erste/r alle Neuigkeiten, Termine und Angebote rund um Projektname. Du kannst dich jederzeit wieder abmelden.</p>
+        <div class="newsletter-frame">
+          <iframe width="540" height="305" src="https://d94f9f30.sibforms.com/v2/serve/MUIFAPSllvHbG6cOYgdYribv1b5Ce9y5wSBLlyt5TQFMuXaJHM4OZq5svFrYtJE9GceAHdvD9XwBI818-dJdeAMpjd6lVieTFuuPXUPoJnu0tOzudfxA-bRFOlv0qLGnkuMfOlmbBZbhcM3pqw1MhJUe2iO1x5SGO_9qwF43w60qF99E7pzc4sYDNXXcxa5be41Q-513acXYvT-VcQ==" frameborder="0" scrolling="auto" allowfullscreen style="display: block; margin-left: auto; margin-right: auto; max-width: 100%;"></iframe>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" id="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-links">
+          <a href="#">Impressum</a>
+          <a href="#">Datenschutz</a>
+        </div>
+        <div class="social">
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="year">2026</span> Projektname. Alle Rechte vorbehalten.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var toggle = document.getElementById('navToggle');
+      var nav = document.getElementById('mainNav');
+      var year = document.getElementById('year');
+
+      if (year) { year.textContent = new Date().getFullYear(); }
+
+      toggle.addEventListener('click', function () {
+        var open = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+
+      nav.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          nav.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>
