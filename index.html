@@ -177,10 +177,10 @@
 
     .about-ina { display: flex; flex-wrap: wrap; background: var(--soft); }
     .about-ina .portrait {
-      flex: 1 1 360px; min-width: 0; min-height: 340px; background: var(--tile);
-      display: flex; align-items: center; justify-content: center;
+      flex: 1 1 360px; min-width: 0; min-height: 440px; background: var(--tile);
+      position: relative; overflow: hidden;
     }
-    .about-ina .portrait img { width: 100%; height: 100%; object-fit: cover; }
+    .about-ina .portrait img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; }
     .about-ina .text { flex: 1 1 520px; min-width: 0; padding: clamp(28px, 4vw, 56px); display: flex; flex-direction: column; gap: 16px; }
     .about-ina h3 { font-weight: 500; font-size: 26px; line-height: 1.3; }
     .about-ina .disclaimer { font-size: 15px; color: var(--text-muted); border-top: 1px solid var(--line); padding-top: 16px; }
@@ -439,9 +439,7 @@
 
         <div class="about-ina">
           <div class="portrait">
-            <!-- TODO Porträtfoto: Datei nach assets/img/ina-langer.jpg legen und das <svg> unten ersetzen durch:
-                 <img src="assets/img/ina-langer.jpg" alt="Ina Langer" width="800" height="800"> -->
-            <svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="#2f5f63" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>
+            <img src="assets/img/ina-langer.jpg" alt="Porträt von Ina Langer" width="480" height="600" loading="lazy">
           </div>
           <div class="text">
             <h3>Hinter der INA Academy</h3>
