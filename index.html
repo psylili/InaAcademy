@@ -48,7 +48,7 @@
     }
 
     *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; scroll-padding-top: 100px; } /* Platz für das mitlaufende Menü bei Sprunglinks */
     body {
       margin: 0;
       font-family: var(--font-sans);
@@ -97,7 +97,12 @@
     .icon-circle { display: flex; align-items: center; justify-content: center; flex: none; border-radius: 50%; background: var(--mint); }
 
     /* ---------- Header ---------- */
-    .site-header { background: var(--dark); border-bottom: 1px solid rgba(247,241,219,0.15); position: relative; z-index: 10; }
+    /* Menü läuft beim Scrollen mit (sticky) */
+    .site-header { background: var(--dark); border-bottom: 1px solid rgba(247,241,219,0.15); position: sticky; top: 0; z-index: 100; transition: box-shadow .2s; }
+    .site-header.scrolled { box-shadow: 0 4px 16px rgba(0,0,0,0.18); }
+    .header-inner, .logo-link img { transition: padding .2s, height .2s; }
+    .site-header.scrolled .header-inner { padding-top: 10px; padding-bottom: 10px; }
+    .site-header.scrolled .logo-link img { height: 44px; }
     .header-inner {
       max-width: 1240px; margin: 0 auto;
       padding: 18px clamp(20px, 4vw, 48px);
@@ -311,7 +316,8 @@
       .nav-toggle[aria-expanded="true"] span::after { transform: translateY(-7px) rotate(-45deg); }
       .header-inner { flex-wrap: wrap; }
       .main-nav { display: none; flex-basis: 100%; }
-      .main-nav.open { display: block; }
+      .main-nav.open { display: block; max-height: calc(100vh - 90px); overflow-y: auto; }
+      html { scroll-padding-top: 84px; }
       .main-nav ul { flex-direction: column; align-items: stretch; gap: 0; padding: 8px 0 12px; }
       .main-nav li a:not(.btn) { display: block; padding: 14px 0; border-bottom: 1px solid rgba(247,241,219,0.15); }
       .main-nav li:last-child { padding-top: 16px; }
@@ -754,6 +760,12 @@
       var nav = document.getElementById('mainNav');
       var year = document.getElementById('year');
       if (year) { year.textContent = new Date().getFullYear(); }
+
+      // Menü wird beim Scrollen etwas schmaler und bekommt einen leichten Schatten
+      var header = document.querySelector('.site-header');
+      function onScroll() { header.classList.toggle('scrolled', window.scrollY > 40); }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
 
       function setOpen(open) {
         nav.classList.toggle('open', open);
