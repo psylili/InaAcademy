@@ -1,0 +1,8 @@
+Schriften auf dieser Website (lokal gehostet, keine Verbindung zu Google-Servern):
+
+- Lora – Copyright 2011 The Lora Project Authors (https://github.com/cyrealtype/Lora-Cyrillic),
+  with Reserved Font Name "Lora". Lizenz: SIL Open Font License 1.1 (unverändert, nur ins WOFF-Format verpackt).
+- Inter – Copyright 2016 The Inter Project Authors (https://github.com/rsms/inter).
+  Lizenz: SIL Open Font License 1.1 (auf lateinische Zeichen reduziert).
+
+Lizenztext: https://openfontlicense.org

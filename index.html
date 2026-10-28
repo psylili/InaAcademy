@@ -3,327 +3,327 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>INA Academy – Inner Natural Alignment</title>
-  <meta name="description" content="INA Academy: Alle Infos zum kommenden Projekt, kostenloses Freebie und Newsletter-Anmeldung. Jetzt informiert bleiben.">
+  <title>INA Academy – Ganzheitliches Gesundheitswissen online</title>
+  <meta name="description" content="INA Academy – Inner Natural Alignment: ganzheitliches Gesundheitswissen aus Naturheilkunde, Ernährung und Mikronährstoffkunde. Verständlich erklärt, online und in deinem Tempo.">
   <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#2F5F63">
-  <link rel="canonical" href="https://benutzername.github.io/projektname/">
+  <meta name="theme-color" content="#123233">
+  <link rel="canonical" href="https://psylili.github.io/InaAcademy/">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="INA Academy – Info zum kommenden Projekt">
-  <meta property="og:description" content="Alle Infos zum kommenden Projekt, kostenloses Freebie und Newsletter-Anmeldung.">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80">
-  <meta property="og:url" content="https://benutzername.github.io/projektname/">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:title" content="INA Academy – Dein Körper spricht">
+  <meta property="og:description" content="Ganzheitliches Gesundheitswissen online – verständlich erklärt, wissenschaftlich orientiert. Die Academy ist im Aufbau: Sei beim Start dabei.">
+  <meta property="og:image" content="https://psylili.github.io/InaAcademy/assets/img/hero-frau-pflanzen.jpg">
+  <meta property="og:url" content="https://psylili.github.io/InaAcademy/">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="INA Academy – Info zum kommenden Projekt">
-  <meta name="twitter:description" content="Alle Infos zum kommenden Projekt, kostenloses Freebie und Newsletter-Anmeldung.">
-  <meta name="twitter:image" content="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Schriften werden lokal geladen (keine Verbindung zu Google-Servern, DSGVO) -->
+  <link rel="preload" href="assets/fonts/inter-400.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="assets/fonts/lora-var.woff" as="font" type="font/woff" crossorigin>
 
   <style>
+    /* ---------- Schriften ---------- */
+    @font-face { font-family: "Inter"; src: url("assets/fonts/inter-400.woff") format("woff"); font-weight: 400; font-style: normal; font-display: swap; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/inter-500.woff") format("woff"); font-weight: 500; font-style: normal; font-display: swap; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/inter-600.woff") format("woff"); font-weight: 600; font-style: normal; font-display: swap; }
+    @font-face { font-family: "Lora"; src: url("assets/fonts/lora-var.woff") format("woff"); font-weight: 400 700; font-style: normal; font-display: swap; }
+    @font-face { font-family: "Lora"; src: url("assets/fonts/lora-italic-var.woff") format("woff"); font-weight: 400 700; font-style: italic; font-display: swap; }
+
+    /* ---------- Design-Tokens INA Academy ---------- */
     :root {
-      --accent: #2F5F63;
-      --accent-dark: #234749;
-      --accent-light: #e8f0f0;
-      --text: #2b2f33;
-      --text-light: #5d666c;
-      --bg: #ffffff;
-      --bg-soft: #f5f8f8;
-      --radius: 14px;
-      --shadow: 0 10px 30px rgba(35, 71, 73, 0.12);
-      --header-h: 72px;
+      --dark: #123233;        /* Header, Hero, dunkle Sektionen, Footer */
+      --petrol: #2f5f63;      /* Logo-/Markenfarbe, Akzente, Icons */
+      --cream: #f7f1db;       /* Unterzeilen & Akzenttext auf dunklem Grund */
+      --white: #ffffff;
+      --soft: #f6f6f6;        /* helle Sektionen */
+      --mint: #e3eceb;        /* Icon-Kreise, Hinweisbox */
+      --tile: #dfe8e7;        /* Bildflächen */
+      --ink: #111111;         /* Überschriften auf hell */
+      --text: #1b1f1f;
+      --text-muted: #3f4848;
+      --line: #d9dddd;
+      --font-serif: "Lora", Georgia, "Times New Roman", serif;
+      --font-sans: "Inter", "Helvetica Neue", Arial, sans-serif;
+      --pad-section: clamp(64px, 8vw, 112px) clamp(20px, 5vw, 48px);
     }
 
     *, *::before, *::after { box-sizing: border-box; }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: var(--header-h);
-    }
-
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      font-family: 'Inter', 'Segoe UI', Roboto, Arial, sans-serif;
+      font-family: var(--font-sans);
+      font-size: 17px;
+      line-height: 1.6;
       color: var(--text);
-      background: var(--bg);
-      line-height: 1.7;
+      background: var(--white);
       -webkit-font-smoothing: antialiased;
     }
+    img { max-width: 100%; display: block; }
+    a { color: var(--petrol); }
+    a:hover { color: var(--dark); }
+    p, h1, h2, h3, h4, blockquote, figure { margin: 0; }
+    h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 400; color: var(--ink); }
+    :focus-visible { outline: 3px solid #7fb3b7; outline-offset: 3px; }
+    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
-    img { max-width: 100%; height: auto; display: block; }
-    a { color: var(--accent); }
-
-    .container {
-      width: 100%;
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    section { padding: 88px 0; }
-
-    h1, h2, h3 { line-height: 1.2; margin: 0 0 16px; color: var(--text); }
-    h2 { font-size: clamp(1.75rem, 3.5vw, 2.4rem); font-weight: 800; }
-    h3 { font-size: 1.25rem; font-weight: 700; }
-    p { margin: 0 0 16px; }
-
-    .eyebrow {
-      display: inline-block;
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 12px;
-    }
+    /* ---------- Bausteine ---------- */
+    .wrap { max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; }
+    .wrap-wide { max-width: 1180px; }
+    .center { text-align: center; align-items: center; }
+    .eyebrow { font-size: 13px; font-weight: 600; letter-spacing: 0.14em; color: var(--petrol); text-transform: uppercase; }
+    .h-section { font-size: clamp(36px, 4.4vw, 56px); line-height: 1.15; }
+    .lead-italic { font-family: var(--font-serif); font-style: italic; font-size: 22px; line-height: 1.4; color: var(--petrol); }
+    .muted { color: var(--text-muted); }
+    .maxw { max-width: 780px; }
 
     .btn {
       display: inline-block;
-      padding: 14px 32px;
-      background: var(--accent);
-      color: #fff;
-      font-weight: 600;
-      font-size: 1rem;
+      font: inherit; font-size: 16px; font-weight: 600;
       text-decoration: none;
-      border-radius: 999px;
-      border: 2px solid var(--accent);
-      transition: background 0.25s, transform 0.25s, box-shadow 0.25s;
+      padding: 16px 38px;
+      border: 1px solid transparent;
       cursor: pointer;
+      transition: background-color .2s, color .2s;
     }
-    .btn:hover, .btn:focus-visible {
-      background: var(--accent-dark);
-      border-color: var(--accent-dark);
-      transform: translateY(-2px);
-      box-shadow: var(--shadow);
-    }
-    .btn-light { background: #fff; color: var(--accent); border-color: #fff; }
-    .btn-light:hover, .btn-light:focus-visible { background: var(--accent-light); border-color: var(--accent-light); color: var(--accent-dark); }
+    .btn-light { background: var(--white); color: var(--dark); }
+    .btn-light:hover { background: var(--cream); color: var(--dark); }
+    .btn-dark { background: var(--dark); color: var(--white); }
+    .btn-dark:hover { background: var(--petrol); color: var(--white); }
+    .btn-outline-light { background: transparent; color: var(--white); border-color: var(--white); font-weight: 500; }
+    .btn-outline-light:hover { background: var(--white); color: var(--dark); }
+    .btn-outline-dark { background: transparent; color: var(--dark); border-color: var(--dark); }
+    .btn-outline-dark:hover { background: var(--dark); color: var(--white); }
 
-    /* Header */
-    .site-header {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      height: var(--header-h);
-      background: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(8px);
-      box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
-      z-index: 1000;
-    }
+    .icon-circle { display: flex; align-items: center; justify-content: center; flex: none; border-radius: 50%; background: var(--mint); }
+
+    /* ---------- Header ---------- */
+    .site-header { background: var(--dark); border-bottom: 1px solid rgba(247,241,219,0.15); position: relative; z-index: 10; }
     .header-inner {
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
+      max-width: 1240px; margin: 0 auto;
+      padding: 18px clamp(20px, 4vw, 48px);
+      display: flex; align-items: center; justify-content: space-between; gap: 16px 32px;
     }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-      color: var(--accent);
-      font-weight: 800;
-      font-size: 1.15rem;
-    }
-    .brand img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; background: #d9dfe0; }
+    .logo-link { display: block; line-height: 0; }
+    .logo-link img { height: 56px; width: auto; }
+    .main-nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 30px; }
+    .main-nav a { color: var(--white); text-decoration: none; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; }
+    .main-nav a:hover { color: var(--cream); }
+    .main-nav a.active { font-weight: 600; }
+    .main-nav .btn { text-transform: none; letter-spacing: 0; font-size: 15px; padding: 12px 26px; color: var(--dark); }
+    .main-nav .btn:hover { color: var(--dark); }
+    .nav-toggle { display: none; }
 
-    .nav-list {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-      list-style: none;
-      margin: 0; padding: 0;
+    /* ---------- Hero ---------- */
+    .hero { background: var(--dark); display: flex; flex-wrap: wrap; align-items: stretch; }
+    .hero-text {
+      flex: 1 1 560px; min-width: 0; position: relative; overflow: hidden;
+      display: flex; align-items: center;
+      padding: clamp(64px, 8vw, 112px) clamp(24px, 6vw, 96px);
     }
-    .nav-list a {
-      text-decoration: none;
-      color: var(--text);
-      font-weight: 500;
-      font-size: 0.95rem;
-      padding: 6px 0;
-      border-bottom: 2px solid transparent;
-      transition: color 0.2s, border-color 0.2s;
+    .hero-watermark {
+      position: absolute; right: -2%; bottom: 2%;
+      font-family: var(--font-serif); font-style: italic;
+      font-size: clamp(100px, 11vw, 170px); line-height: 1;
+      color: rgba(247,241,219,0.10); transform: rotate(-12deg); pointer-events: none;
     }
-    .nav-list a:hover, .nav-list a:focus-visible { color: var(--accent); border-color: var(--accent); }
+    .hero-content { position: relative; max-width: 580px; display: flex; flex-direction: column; align-items: flex-start; gap: 22px; }
+    .badge {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--cream); color: var(--dark);
+      font-size: 13px; font-weight: 600; letter-spacing: 0.06em; padding: 8px 14px;
+    }
+    .hero h1 { font-size: clamp(48px, 6vw, 84px); line-height: 1.05; color: var(--white); }
+    .hero-sub { font-family: var(--font-serif); font-style: italic; font-size: clamp(22px, 2.4vw, 30px); line-height: 1.3; color: var(--cream); }
+    .hero-intro { font-size: 19px; line-height: 1.55; color: var(--white); }
+    .btn-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
 
-    .nav-toggle {
-      display: none;
-      width: 44px; height: 44px;
-      background: transparent;
-      border: 0;
-      cursor: pointer;
-      padding: 10px;
-      border-radius: 8px;
+    .hero-media {
+      flex: 1 1 480px; min-width: 0; min-height: 560px; position: relative;
+      display: flex; align-items: flex-end; padding: clamp(20px, 3vw, 40px);
     }
-    .nav-toggle span, .nav-toggle span::before, .nav-toggle span::after {
-      display: block;
-      width: 24px; height: 2px;
-      background: var(--accent);
-      border-radius: 2px;
-      position: relative;
-      transition: transform 0.3s, background 0.3s;
-    }
-    .nav-toggle span::before, .nav-toggle span::after { content: ""; position: absolute; left: 0; }
-    .nav-toggle span::before { top: -8px; }
-    .nav-toggle span::after { top: 8px; }
-    .nav-toggle[aria-expanded="true"] span { background: transparent; }
-    .nav-toggle[aria-expanded="true"] span::before { transform: translateY(8px) rotate(45deg); }
-    .nav-toggle[aria-expanded="true"] span::after { transform: translateY(-8px) rotate(-45deg); }
+    .hero-media > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 60% 35%; }
+    .start-card { position: relative; max-width: 440px; background: var(--white); padding: 28px; display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
+    .start-card h2 { font-weight: 500; font-size: 24px; line-height: 1.25; }
+    .start-card p { font-size: 15px; line-height: 1.55; color: var(--text-muted); }
+    .start-card .btn { background: var(--petrol); color: var(--white); padding: 13px 22px; font-size: 15px; }
+    .start-card .btn:hover { background: var(--dark); }
+    .start-card .small { font-size: 12px; line-height: 1.5; color: #4f5a5a; }
 
-    /* Hero */
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding: calc(var(--header-h) + 40px) 0 80px;
-      color: #fff;
-      background-color: var(--accent-dark);
-      background-image:
-        linear-gradient(135deg, rgba(35, 71, 73, 0.88), rgba(47, 95, 99, 0.70)),
-        url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1920&q=80");
-      background-size: cover;
-      background-position: center;
-    }
-    .hero-content { max-width: 720px; }
-    .hero h1 {
-      color: #fff;
-      font-size: clamp(2.25rem, 6vw, 4rem);
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      margin-bottom: 20px;
-    }
-    .hero p { font-size: clamp(1.05rem, 2vw, 1.25rem); opacity: 0.95; margin-bottom: 32px; }
-    .hero .eyebrow { color: #cfe3e4; }
+    /* ---------- Beschwerden ---------- */
+    .complaints { background: var(--petrol); color: var(--white); padding: clamp(64px, 8vw, 104px) clamp(20px, 5vw, 48px); }
+    .complaints .wrap { gap: 44px; }
+    .complaints h2 { text-align: center; font-size: clamp(30px, 3.6vw, 44px); line-height: 1.2; color: var(--white); }
+    .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; }
+    .complaint { border-top: 1px solid rgba(247,241,219,0.45); padding-top: 20px; display: flex; flex-direction: column; gap: 12px; }
+    .complaint p { font-size: 18px; font-weight: 500; }
+    .complaints-text { max-width: 780px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; gap: 18px; align-items: center; }
+    .complaints-text p { font-size: 18px; }
+    .complaints-text .tagline { font-size: 15px; letter-spacing: 0.04em; color: var(--cream); }
+    .complaints-text .btn { margin-top: 10px; }
 
-    /* Über das Projekt */
-    .about { background: var(--bg); }
-    .two-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 56px;
-      align-items: center;
-    }
-    .about-image img {
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      background: #d9dfe0;
-    }
-    .facts {
-      list-style: none;
-      padding: 0;
-      margin: 24px 0 0;
-      display: grid;
-      gap: 12px;
-    }
-    .facts li { display: flex; gap: 12px; align-items: flex-start; }
-    .facts i { color: var(--accent); margin-top: 5px; }
+    /* ---------- Mission ---------- */
+    .mission { background: var(--white); padding: var(--pad-section); }
+    .mission .wrap { gap: 48px; }
+    .head { display: flex; flex-direction: column; gap: 14px; }
+    .two-col { display: flex; flex-wrap: wrap; gap: 40px 64px; }
+    .two-col > div { flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 18px; }
+    .strong { font-weight: 600; color: var(--ink); }
+    .quote-serif { font-family: var(--font-serif); font-size: 22px; line-height: 1.45; color: var(--ink); }
 
-    /* Freebie */
-    .freebie { background: var(--bg-soft); }
-    .freebie-box {
-      display: grid;
-      grid-template-columns: 220px 1fr;
-      gap: 40px;
-      align-items: center;
-      background: #fff;
-      padding: 40px;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
+    .about-ina { display: flex; flex-wrap: wrap; background: var(--soft); }
+    .about-ina .portrait {
+      flex: 1 1 360px; min-width: 0; min-height: 340px; background: var(--tile);
+      display: flex; align-items: center; justify-content: center;
     }
-    .freebie-box img {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      border-radius: 12px;
-      background: #d9dfe0;
-    }
+    .about-ina .portrait img { width: 100%; height: 100%; object-fit: cover; }
+    .about-ina .text { flex: 1 1 520px; min-width: 0; padding: clamp(28px, 4vw, 56px); display: flex; flex-direction: column; gap: 16px; }
+    .about-ina h3 { font-weight: 500; font-size: 26px; line-height: 1.3; }
+    .about-ina .disclaimer { font-size: 15px; color: var(--text-muted); border-top: 1px solid var(--line); padding-top: 16px; }
+    .about-ina .closing { font-family: var(--font-serif); font-style: italic; font-size: 20px; color: var(--petrol); }
 
-    /* Newsletter */
-    .newsletter { background: var(--bg); text-align: center; }
-    .newsletter .intro { max-width: 620px; margin: 0 auto 32px; color: var(--text-light); }
-    .newsletter-frame {
-      background: var(--accent-light);
-      border-radius: var(--radius);
-      padding: 24px;
-      max-width: 620px;
-      margin: 0 auto;
-    }
+    .why { display: flex; flex-direction: column; gap: 28px; }
+    .why h3 { text-align: center; font-size: clamp(28px, 3vw, 38px); }
+    .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 32px; }
+    .why-item { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
+    .why-item .icon-circle { width: 64px; height: 64px; }
+    .why-item p:last-child { font-size: 16px; color: var(--text-muted); }
+    .why .closing { margin-top: 8px; text-align: center; font-family: var(--font-serif); font-size: 22px; color: var(--ink); }
 
-    /* Footer */
-    .site-footer {
-      background: var(--accent-dark);
-      color: #dbe7e8;
-      padding: 48px 0 32px;
-      font-size: 0.95rem;
+    /* ---------- So funktioniert's ---------- */
+    .how { background: var(--soft); padding: var(--pad-section); }
+    .how .head { gap: 16px; }
+    .how h2 { max-width: 900px; font-size: clamp(34px, 4.2vw, 54px); line-height: 1.15; }
+
+    /* ---------- Lernformate ---------- */
+    .formats { background: var(--dark); color: var(--white); padding: clamp(64px, 8vw, 104px) clamp(20px, 5vw, 48px); }
+    .formats .wrap { gap: 48px; }
+    .formats h2 { text-align: center; font-size: clamp(32px, 3.8vw, 48px); line-height: 1.2; color: var(--white); }
+    .format-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; }
+    .format-card { background: var(--white); color: var(--ink); padding: 36px 28px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px; }
+    .format-card .icon-circle { width: 112px; height: 112px; margin-bottom: 6px; }
+    .format-card h3 { font-weight: 500; font-size: 22px; line-height: 1.3; }
+    .format-card .key { font-size: 15px; font-weight: 600; color: var(--petrol); }
+    .format-card p:last-child { font-size: 15px; color: var(--text-muted); }
+
+    /* ---------- Ansatz ---------- */
+    .approach { background: var(--white); padding: var(--pad-section); }
+    .approach .wrap { gap: 44px; }
+    .approach .head { gap: 12px; }
+    .approach h2 { font-size: clamp(32px, 3.8vw, 48px); line-height: 1.2; }
+    .approach-card { background: var(--soft); padding: 32px 26px; display: flex; flex-direction: column; gap: 14px; }
+    .approach-card .icon-circle { width: 64px; height: 64px; background: var(--petrol); }
+    .approach-card .title { font-family: var(--font-serif); font-size: 22px; color: var(--ink); }
+    .approach-card p:last-child { font-size: 16px; color: var(--text-muted); }
+    .note-box { background: var(--mint); padding: clamp(24px, 4vw, 40px); display: flex; flex-wrap: wrap; gap: 20px 40px; align-items: center; justify-content: space-between; }
+    .note-box > div { flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 8px; }
+
+    /* ---------- Module ---------- */
+    .modules { background: var(--soft); padding: var(--pad-section); }
+    .modules .wrap { gap: 48px; }
+    .modules h3.sub { font-weight: 500; font-size: 26px; }
+    .module-card { background: var(--white); display: flex; flex-direction: column; }
+    .module-card .media { height: 180px; background: var(--tile); border-bottom: 3px solid var(--petrol); display: flex; align-items: center; justify-content: center; }
+    .module-card .body { padding: 28px; display: flex; flex-direction: column; gap: 14px; flex-grow: 1; }
+    .module-card h4 { font-weight: 500; font-size: 22px; line-height: 1.3; }
+    .module-card .body p { flex-grow: 1; font-size: 15px; color: var(--text-muted); }
+    .module-card .more { font-size: 15px; font-weight: 600; text-decoration: none; }
+    .btn-center { display: flex; justify-content: center; }
+
+    .path { display: flex; flex-direction: column; gap: 32px; border-top: 1px solid var(--line); padding-top: 48px; }
+    .path h3 { font-weight: 500; font-size: 28px; }
+    .path-steps { position: relative; }
+    .path-line { position: absolute; left: 10%; right: 10%; top: 40px; border-top: 2px dashed #8fa9a8; }
+    .path-grid { position: relative; display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 28px 20px; }
+    .step { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px; }
+    .step .icon-circle { width: 80px; height: 80px; background: var(--white); border: 2px solid var(--petrol); }
+    .step .icon-circle.filled { background: var(--petrol); }
+    .step p:last-child { font-size: 15px; color: var(--text-muted); }
+
+    .suggest { display: flex; flex-wrap: wrap; gap: 20px 40px; align-items: center; justify-content: space-between; background: var(--white); padding: clamp(24px, 4vw, 40px); }
+    .suggest > div { flex: 1 1 480px; min-width: 0; display: flex; gap: 18px; align-items: flex-start; }
+    .suggest .title { margin-bottom: 6px; font-family: var(--font-serif); font-size: 22px; color: var(--ink); }
+
+    /* ---------- Newsletter ---------- */
+    .newsletter { background: var(--dark); color: var(--white); padding: clamp(56px, 7vw, 96px) clamp(20px, 5vw, 48px); }
+    .newsletter .inner { max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 32px 64px; align-items: flex-start; }
+    .newsletter .intro { flex: 1 1 400px; min-width: 0; display: flex; flex-direction: column; gap: 16px; position: sticky; top: 24px; }
+    .newsletter .eyebrow { color: var(--cream); }
+    .newsletter h2 { font-size: clamp(32px, 3.4vw, 44px); line-height: 1.2; color: var(--white); }
+    .newsletter .small { font-size: 13px; line-height: 1.5; color: #e6ebea; }
+    .newsletter .small a { color: var(--white); }
+    .newsletter-frame { flex: 1 1 460px; min-width: 0; background: var(--white); padding: 8px; }
+    .newsletter-frame iframe { display: block; width: 100%; max-width: 540px; height: 720px; margin: 0 auto; border: 0; }
+
+    /* ---------- FAQ ---------- */
+    .faq { background: var(--soft); padding: var(--pad-section); }
+    .faq .wrap { max-width: 900px; gap: 40px; }
+    .faq-list { border-top: 1px solid #c9cfcf; }
+    .faq details { border-bottom: 1px solid #c9cfcf; }
+    .faq summary {
+      list-style: none; cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center; gap: 16px;
+      padding: 22px 4px; font-size: 18px; font-weight: 500; color: var(--ink);
     }
-    .footer-top {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      padding-bottom: 24px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-    }
-    .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
-    .footer-links a, .site-footer a { color: #dbe7e8; text-decoration: none; opacity: 0.85; }
-    .footer-links a:hover, .footer-links a:focus-visible { opacity: 1; text-decoration: underline; }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq .plus { flex: none; font-size: 26px; font-weight: 300; color: var(--petrol); transition: transform .2s; }
+    .faq details[open] .plus { transform: rotate(45deg); }
+    .faq details p { padding: 0 4px 22px; color: var(--text-muted); }
+    .faq-end { text-align: center; display: flex; flex-direction: column; gap: 20px; align-items: center; }
+    .faq-end p { font-family: var(--font-serif); font-size: 22px; color: var(--ink); }
+
+    /* ---------- Login ---------- */
+    .login { background: var(--white); padding: clamp(56px, 7vw, 88px) clamp(20px, 5vw, 48px); border-top: 1px solid #e3e6e6; }
+    .login .inner { max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 20px 48px; align-items: center; justify-content: space-between; }
+    .login .inner > div { flex: 1 1 480px; min-width: 0; display: flex; gap: 20px; align-items: flex-start; }
+    .login h2 { margin-bottom: 6px; font-size: clamp(28px, 3vw, 38px); line-height: 1.2; }
+
+    /* ---------- Footer ---------- */
+    .site-footer { background: var(--dark); color: var(--white); }
+    .footer-inner { max-width: 1240px; margin: 0 auto; padding: 64px clamp(20px, 4vw, 48px); display: flex; flex-wrap: wrap; gap: 40px 64px; justify-content: space-between; }
+    .footer-brand { flex: 1 1 260px; display: flex; flex-direction: column; gap: 20px; }
+    .footer-brand img { width: 200px; height: auto; }
+    .footer-brand p, .footer-cta p { font-size: 14px; line-height: 1.6; color: #e6ebea; max-width: 300px; }
+    .footer-nav { flex: 0 1 200px; display: flex; flex-direction: column; gap: 10px; }
+    .footer-nav a { color: var(--white); text-decoration: none; }
+    .footer-nav a:hover { text-decoration: underline; color: var(--white); }
+    .footer-cta { flex: 0 1 240px; display: flex; flex-direction: column; gap: 20px; align-items: flex-start; }
+    .footer-cta .btn { padding: 14px 32px; }
     .social { display: flex; gap: 12px; }
-    .social a {
-      width: 40px; height: 40px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.1);
-      transition: background 0.25s, transform 0.25s;
-    }
-    .social a:hover, .social a:focus-visible { background: rgba(255, 255, 255, 0.25); transform: translateY(-2px); }
-    .footer-bottom { padding-top: 24px; text-align: center; }
-    .footer-bottom p { margin: 0; opacity: 0.85; }
+    .social a { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; background: var(--white); }
+    .social a:hover { background: var(--cream); }
+    .footer-bottom { background: #111111; }
+    .footer-bottom div { max-width: 1240px; margin: 0 auto; padding: 20px clamp(20px, 4vw, 48px); font-size: 13px; color: #d6d6d6; }
 
-    a:focus-visible, button:focus-visible { outline: 3px solid #7fb3b7; outline-offset: 3px; }
-
-    /* Tablet */
-    @media (max-width: 900px) {
-      section { padding: 64px 0; }
-      .two-col { grid-template-columns: 1fr; gap: 32px; }
-      .freebie-box { grid-template-columns: 160px 1fr; padding: 28px; gap: 28px; }
-    }
-
-    /* Smartphone */
-    @media (max-width: 768px) {
-      .nav-toggle { display: block; }
-      .nav {
-        position: absolute;
-        top: var(--header-h);
-        left: 0; right: 0;
-        background: #fff;
-        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.35s ease;
+    /* ---------- Smartphone ---------- */
+    @media (max-width: 960px) {
+      .nav-toggle {
+        display: inline-flex; align-items: center; justify-content: center;
+        width: 48px; height: 48px; background: transparent; border: 1px solid rgba(255,255,255,0.5); cursor: pointer;
       }
-      .nav.open { max-height: 400px; }
-      .nav-list { flex-direction: column; align-items: stretch; gap: 0; padding: 8px 24px 20px; }
-      .nav-list a { display: block; padding: 14px 0; border-bottom: 1px solid #eef1f1; }
+      .nav-toggle span, .nav-toggle span::before, .nav-toggle span::after {
+        display: block; width: 22px; height: 2px; background: var(--white); position: relative; transition: transform .25s, background .25s;
+      }
+      .nav-toggle span::before, .nav-toggle span::after { content: ""; position: absolute; left: 0; }
+      .nav-toggle span::before { top: -7px; }
+      .nav-toggle span::after { top: 7px; }
+      .nav-toggle[aria-expanded="true"] span { background: transparent; }
+      .nav-toggle[aria-expanded="true"] span::before { transform: translateY(7px) rotate(45deg); }
+      .nav-toggle[aria-expanded="true"] span::after { transform: translateY(-7px) rotate(-45deg); }
+      .header-inner { flex-wrap: wrap; }
+      .main-nav { display: none; flex-basis: 100%; }
+      .main-nav.open { display: block; }
+      .main-nav ul { flex-direction: column; align-items: stretch; gap: 0; padding: 8px 0 12px; }
+      .main-nav li a:not(.btn) { display: block; padding: 14px 0; border-bottom: 1px solid rgba(247,241,219,0.15); }
+      .main-nav li:last-child { padding-top: 16px; }
+      .main-nav .btn { display: block; text-align: center; }
+      .logo-link img { height: 48px; }
     }
-
-    @media (max-width: 560px) {
-      .freebie-box { grid-template-columns: 1fr; text-align: center; }
-      .freebie-box img { max-width: 200px; margin: 0 auto; }
-      .brand span { font-size: 1rem; }
-      .footer-top { flex-direction: column; text-align: center; }
-      .newsletter-frame { padding: 12px; }
+    @media (max-width: 760px) {
+      .path-line { display: none; }
+      .hero-media { min-height: 520px; }
+      .newsletter .intro { position: static; }
+      .newsletter-frame { padding: 0; }
     }
-
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       * { transition: none !important; }
@@ -332,110 +332,420 @@
 </head>
 <body>
 
+  <!-- HEADER -->
   <header class="site-header">
-    <div class="container header-inner">
-      <a href="#top" class="brand" aria-label="Zur Startseite von Ina Academy">
-       <img src="logo.png" width="44" height="44">
-        <span>Projektname</span>
-      </a>
-      <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen oder schließen" aria-expanded="false" aria-controls="mainNav">
-        <span></span>
-      </button>
-      <nav class="nav" id="mainNav" aria-label="Hauptnavigation">
-        <ul class="nav-list">
-          <li><a href="#projekt">Über das Projekt</a></li>
-          <li><a href="#freebie">Freebie</a></li>
-          <li><a href="#newsletter">Newsletter</a></li>
-          <li><a href="#footer">Impressum</a></li>
+    <div class="header-inner">
+      <a href="#start" class="logo-link"><img src="assets/img/logo-ina-academy.png" alt="INA Academy – Inner Natural Alignment" width="1200" height="546"></a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mainNav"><span></span></button>
+      <nav class="main-nav" id="mainNav" aria-label="Hauptnavigation">
+        <ul>
+          <li><a href="#start" class="active">Start</a></li>
+          <li><a href="#mission">Mission</a></li>
+          <li><a href="#so-funktionierts">So funktioniert's</a></li>
+          <li><a href="#module">Module</a></li>
+          <li><a href="#login">Login</a></li>
+          <li><a href="#module" class="btn btn-light">Module entdecken</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main id="top">
+  <main>
 
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="container">
+    <!-- START / HERO -->
+    <section id="start" class="hero">
+      <div class="hero-text">
+        <div class="hero-watermark" aria-hidden="true">spüren</div>
         <div class="hero-content">
-          <span class="eyebrow">Demnächst verfügbar</span>
-          <h1 id="hero-title">INA Academy - Inner Natural Alignment</h1>
-          <p>Kurzer Teaser-Text: Worum geht es im Projekt und warum lohnt es sich, dabei zu sein?</p>
-          <a href="#newsletter" class="btn btn-light">Zum Newsletter anmelden</a>
+          <p class="badge"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v3"/><path d="M12 18v3"/><path d="M3 12h3"/><path d="M18 12h3"/><path d="M5.6 5.6l2.1 2.1"/><path d="M16.3 16.3l2.1 2.1"/><path d="M5.6 18.4l2.1-2.1"/><path d="M16.3 7.7l2.1-2.1"/></svg>DIE INA ACADEMY IST IM AUFBAU – START IN KÜRZE</p>
+          <h1>Dein Körper spricht</h1>
+          <p class="hero-sub">Lerne wieder, ihn zu verstehen.</p>
+          <p class="hero-intro">Du hast Beschwerden, aber bisher keine klare Erklärung dafür? Hier findest du ganzheitliches Gesundheitswissen aus Naturheilkunde, Ernährung und Mikronährstoffkunde – verständlich erklärt, online und in deinem Tempo.</p>
+          <div class="btn-row">
+            <a href="#module" class="btn btn-light">Module entdecken</a>
+            <a href="#newsletter" class="btn btn-outline-light">Zum Newsletter</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-media">
+        <img src="assets/img/hero-frau-pflanzen.jpg" alt="Junge Frau mit geschlossenen Augen vor grünen Pflanzen" width="841" height="750">
+        <div class="start-card">
+          <h2>Sei beim Start dabei</h2>
+          <p>Unsere Online-Module zu Darmgesundheit, Müdigkeit, Mikronährstoffen und Hormonen entstehen gerade. Trag dich in den Newsletter ein: So erfährst du zuerst, wann die Module buchbar sind – und sicherst dir unsere exklusiven Startaktionen für Neukundinnen und Neukunden.</p>
+          <a href="#newsletter" class="btn">Zum Start informieren</a>
+          <p class="small">Kostenlos und jederzeit abbestellbar. Hinweise in der <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
         </div>
       </div>
     </section>
 
-    <section class="about" id="projekt" aria-labelledby="about-title">
-      <div class="container two-col">
-        <div class="about-image">
-          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" alt="Projektvorschau: Menschen arbeiten gemeinsam am Projekt" width="800" height="600" loading="lazy">
+    <!-- BESCHWERDEN -->
+    <section class="complaints" aria-labelledby="complaints-title">
+      <div class="wrap">
+        <h2 id="complaints-title">Du hast Beschwerden, aber bisher keine klare Erklärung dafür?</h2>
+        <div class="grid-4">
+          <div class="complaint">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#f7f1db" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3c-2 2-2 4 0 6s2 4 0 6"/><path d="M14 3c-2 2-2 4 0 6s2 4 0 6"/><path d="M5 19h14"/></svg>
+            <p>Verdauungsprobleme</p>
+          </div>
+          <div class="complaint">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#f7f1db" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="16" height="10" rx="2"/><path d="M21 11v2"/><path d="M6 10v4"/></svg>
+            <p>Ständige Müdigkeit &amp; Erschöpfung</p>
+          </div>
+          <div class="complaint">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#f7f1db" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12c2-4 4-4 6 0s4 4 6 0 4-4 6 0"/></svg>
+            <p>Stimmungsschwankungen</p>
+          </div>
+          <div class="complaint">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#f7f1db" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6"/><path d="M10 3v6L5 19a1.5 1.5 0 0 0 1.3 2h11.4a1.5 1.5 0 0 0 1.3-2L14 9V3"/><path d="M7.5 15h9"/></svg>
+            <p>Unauffällige Laborwerte – aber dir geht es trotzdem nicht gut?</p>
+          </div>
         </div>
-        <div class="about-text">
-          <span class="eyebrow">Über das Projekt</span>
-          <h2 id="about-title">Das ist Ina Academy</h2>
-          <p>Bei der Ina Academy findest du fundiertes, ganzheitliches Gesundheitswissen, das dir hilft, Symptome besser zu verstehen und deinen Körper wieder in Balance zu bringen.</p>
-          <p>Inner Natural Alignment bedeutet, Körper, Geist und natürliche Rhythmen wieder in Einklang zu bringen. In der Ina Academy lernst du, die Signale deines Körpers zu deuten und die Zusammenhänge hinter deinen Beschwerden zu verstehen.
-Hier erhältst du fundiertes Wissen, verständlich aufbereitet und alltagstauglich: Schritt für Schritt, in deinem Tempo.</p>
-          <ul class="facts">
-            <li><i class="fa-solid fa-calendar-check" aria-hidden="true"></i><span>coming soon .. </span></li>
-            <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>Format: Online </span></li>
-            <li><i class="fa-solid fa-users" aria-hidden="true"></i><span>Diese Plattform ist für dich, wenn du …<p>
-              <p>🧭	deinen Körper besser verstehen willst, um gezielter zu handeln</p>
-              <p>🔍	immer wieder hörst: „Es ist alles in Ordnung“ – aber dein Körper fühlt sich nicht danach an</p>
-              <p>🌀	regelmäßig unter Verdauungsbeschwerden, Erschöpfung oder unklaren Symptomen leidest</p>
-              <p>🌿	Neben der klassischen Schulmedizin nach Möglichkeiten suchst – ohne dogmatische Heilsversprechen</p>
-              <p>📚	offen bist für ganzheitliches Lernen – auf fundierter, moderner Basis</p>
-</span></li>
-          </ul>
+        <div class="complaints-text">
+          <p>Diese Beschwerden können deinen Alltag belasten. Und manchmal sind die Laborwerte unauffällig – obwohl du dich einfach nicht gut fühlst.</p>
+          <p>Bei der INA Academy – Inner Natural Alignment findest du ganzheitliches Gesundheitswissen, das dir hilft, deinen Körper besser zu verstehen. Entdecke Zusammenhänge aus Naturheilkunde, Ernährung, Mikronährstoffkunde und weiteren Gesundheitsthemen – verständlich erklärt und für dich aufbereitet.</p>
+          <p class="tagline">Klar erklärt · Wissenschaftlich orientiert · Ganzheitlich betrachtet</p>
+          <a href="#mission" class="btn btn-light">Jetzt entdecken</a>
         </div>
       </div>
     </section>
 
-    <section class="freebie" id="freebie" aria-labelledby="freebie-title">
-      <div class="container">
-        <div class="freebie-box">
-          <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=400&q=80" alt="Vorschau des kostenlosen Freebies" width="400" height="400" loading="lazy">
+    <!-- MISSION -->
+    <section id="mission" class="mission" aria-labelledby="mission-title">
+      <div class="wrap">
+        <div class="head center">
+          <p class="eyebrow">Mission</p>
+          <h2 id="mission-title" class="h-section">Wer wir sind &amp; warum es uns gibt</h2>
+          <p class="lead-italic maxw">Gesundheitswissen, das Orientierung gibt – wenn noch Fragen offen sind.</p>
+        </div>
+        <div class="two-col">
           <div>
-            <span class="eyebrow">Kostenlos für dich</span>
-            <h2 id="freebie-title">Dein Freebie: Titel des Freebies</h2>
-            <p>Kurzbeschreibung: Was bekommst du mit dem Freebie und welchen Nutzen hat es für dich? Hier steht in ein bis zwei Sätzen, worum es geht.</p>
-            <a href="#" class="btn">Freebie herunterladen</a>
+            <p class="muted">Nicht immer lassen sich Beschwerden eindeutig erklären. Vielleicht hast du schon vieles ausprobiert, dich informiert oder mehrere ärztliche oder therapeutische Gespräche geführt – und trotzdem sind noch Fragen offen.</p>
+            <p class="muted">Welche Faktoren können eine Rolle spielen? Was sagt die Wissenschaft, und welche Erkenntnisse gibt es aus der Erfahrungsheilkunde? Welche Möglichkeiten gibt es, die eigene Gesundheit besser zu verstehen?</p>
+            <p class="strong">Genau hier setzt die INA Academy – Inner Natural Alignment an.</p>
+            <p class="muted">Wir möchten Gesundheitswissen verständlich und zugänglich machen, mögliche Zusammenhänge erklären und neue Perspektiven eröffnen – ergänzend zur medizinischen Versorgung und ohne den Anspruch, auf jede Frage eine fertige Antwort zu haben.</p>
+          </div>
+          <div>
+            <p class="muted">Wir sind überzeugt, dass es sich lohnt, genauer hinzuschauen, wenn Beschwerden bestehen bleiben und Fragen offen sind.</p>
+            <p class="muted">Deshalb verbinden wir wissenschaftliche Erkenntnisse mit ganzheitlichen Perspektiven aus Naturheilkunde, Ernährung und Mikronährstoffkunde sowie Themen wie Hypnose und Achtsamkeit. Dabei ist uns wichtig, medizinische Erkenntnisse verständlich zu vermitteln und transparent einzuordnen.</p>
+            <p class="quote-serif">Unser Ziel ist es, deine Gesundheitskompetenz zu stärken – damit du Informationen besser einordnen und dich bewusster mit deiner Gesundheit auseinandersetzen kannst.</p>
+          </div>
+        </div>
+
+        <div class="about-ina">
+          <div class="portrait">
+            <!-- TODO Porträtfoto: Datei nach assets/img/ina-langer.jpg legen und das <svg> unten ersetzen durch:
+                 <img src="assets/img/ina-langer.jpg" alt="Ina Langer" width="800" height="800"> -->
+            <svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="#2f5f63" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>
+          </div>
+          <div class="text">
+            <h3>Hinter der INA Academy</h3>
+            <p class="muted">Hinter der INA Academy steht <strong class="strong">Ina Langer, Heilpraktikerin, Gesundheitsberaterin, Dozentin und angehende Psychologin</strong>. Ihre fachliche und didaktische Erfahrung fließt in die Inhalte ein. Im Mittelpunkt steht jedoch die Plattform selbst: ein Ort, an dem du dich informieren, Zusammenhänge besser verstehen und neue Impulse rund um deine Gesundheit entdecken kannst.</p>
+            <p class="disclaimer">Die INA Academy ersetzt keine ärztliche oder therapeutische Diagnostik oder Behandlung. Sie ergänzt die medizinische Versorgung durch Gesundheitsbildung und richtet sich an Menschen, die neugierig sind und sich intensiver mit ihrer Gesundheit auseinandersetzen möchten.</p>
+            <p class="closing">INA Academy – weil gute Gesundheitsbildung dort beginnt, wo Fragen entstehen.</p>
+          </div>
+        </div>
+
+        <div class="why">
+          <h3>Warum INA Academy?</h3>
+          <div class="why-grid">
+            <div class="why-item">
+              <span class="icon-circle"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#2f5f63" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21v-9"/><path d="M12 12c0-4 3-7 7-7 0 4-3 7-7 7z"/><path d="M12 14c0-3-2-5-6-5 0 3 2 5 6 5z"/></svg></span>
+              <p class="strong">Ganzheitliches Gesundheitswissen</p>
+              <p>Unterschiedliche Perspektiven verständlich erklärt</p>
+            </div>
+            <div class="why-item">
+              <span class="icon-circle"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#2f5f63" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6"/><path d="M10 21.5h4"/><path d="M15 15c.2-1 .7-1.7 1.4-2.4A4.6 4.6 0 0 0 17.5 9a5.5 5.5 0 0 0-11 0c0 1 .3 2.2 1.4 3.5.7.7 1.2 1.5 1.3 2.5"/><path d="M12 1v1.5"/><path d="M3 9h1.5"/><path d="M19.5 9H21"/><path d="M5 3l1 1"/><path d="M19 3l-1 1"/></svg></span>
+              <p class="strong">Komplexes einfach verstehen</p>
+              <p>Anschauliche Inhalte statt unnötiger Fachsprache</p>
+            </div>
+            <div class="why-item">
+              <span class="icon-circle"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#2f5f63" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M8 7.5l2.8 8.3"/><path d="M16 7.5l-2.8 8.3"/><path d="M8.5 6h7"/></svg></span>
+              <p class="strong">Zusammenhänge entdecken</p>
+              <p>Körperliche, psychische und lebensstilbezogene Faktoren kennenlernen</p>
+            </div>
+            <div class="why-item">
+              <span class="icon-circle"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#2f5f63" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></span>
+              <p class="strong">Mit Herz und Erfahrung</p>
+              <p>Gesundheitswissen, das neugierig macht und zum Weiterlernen einlädt</p>
+            </div>
+          </div>
+          <p class="closing">Für alle, die ihre Gesundheit besser verstehen möchten.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SO FUNKTIONIERT'S -->
+    <section id="so-funktionierts" class="how" aria-labelledby="how-title">
+      <div class="wrap">
+        <div class="head center">
+          <p class="eyebrow">So funktioniert's</p>
+          <h2 id="how-title">Gesundheit verstehen. Zusammenhänge erkennen. Bewusst entscheiden.</h2>
+          <p class="muted maxw">Vielleicht kennst du das Gefühl: Du hast Fragen zur Erhaltung deiner Gesundheit, weißt aber nicht, wo du anfangen sollst – oder du hast schon Dr. Google ausgiebig befragt. Doch je mehr du recherchierst, desto komplizierter wird es und desto schwieriger, den Überblick zu behalten.</p>
+          <p class="muted maxw">Die INA Academy bietet dir einen verständlichen Einstieg in verschiedene Gesundheitsthemen. Du kannst dich in Ruhe informieren, Neues lernen und unterschiedliche ganzheitliche Perspektiven kennenlernen – ganz in deinem eigenen Tempo.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- LERNFORMATE -->
+    <section class="formats" aria-labelledby="formats-title">
+      <div class="wrap wrap-wide">
+        <h2 id="formats-title">So lernst du bei uns</h2>
+        <div class="format-grid">
+          <div class="format-card">
+            <span class="icon-circle"><svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#2f5f63" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M10 8l4 2-4 2z"/><path d="M3 20h18"/><circle cx="9" cy="20" r="1.5"/></svg></span>
+            <h3>Modul-Videos &amp; einzelne Tutorials</h3>
+            <p class="key">Verständlich erklärt – in ca. 10–15 Minuten pro Video.</p>
+            <p>Du möchtest dich mit einem bestimmten Gesundheitsthema beschäftigen, ohne dich erst durch unzählige Informationen arbeiten zu müssen? Unsere Videos bereiten ausgewählte Themen Schritt für Schritt auf.</p>
+          </div>
+          <div class="format-card">
+            <span class="icon-circle"><svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#2f5f63" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg></span>
+            <h3>Klar strukturiert und an Lernzielen orientiert</h3>
+            <p class="key">Wissen verstehen und Zusammenhänge einordnen.</p>
+            <p>Die Inhalte führen dich durch das jeweilige Thema und helfen dir, wichtige Informationen zu ordnen und das Gelernte besser einzuordnen.</p>
+          </div>
+          <div class="format-card">
+            <span class="icon-circle"><svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#2f5f63" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6"/><path d="M9 17h6"/></svg></span>
+            <h3>PDFs &amp; Pläne</h3>
+            <p class="key">Zum Nachlesen, Vertiefen und Organisieren.</p>
+            <p>Ergänzende Übersichten und – je nach Modul – Materialien zur Vertiefung und praktischen Auseinandersetzung unterstützen dich beim Lernen.</p>
+          </div>
+          <div class="format-card">
+            <span class="icon-circle"><svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#2f5f63" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 15v-3a8 8 0 0 1 16 0v3"/><rect x="3" y="14" width="4" height="6" rx="1.5"/><rect x="17" y="14" width="4" height="6" rx="1.5"/></svg></span>
+            <h3>Audios: Hypnose, Meditation &amp; Affirmationen</h3>
+            <p class="key">Nimm dir bewusst Zeit für dich.</p>
+            <p>Je nach Kurs ergänzen Audioinhalte die Videos und laden dich dazu ein, dich in Ruhe mit den jeweiligen Themen auseinanderzusetzen.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="newsletter" id="newsletter" aria-labelledby="newsletter-title">
-      <div class="container">
-        <span class="eyebrow">Newsletter</span>
-        <h2 id="newsletter-title">Bleib auf dem Laufenden</h2>
-        <p class="intro">Trage dich in den Newsletter ein und erfahre als Erste/r alle Neuigkeiten, Termine und Angebote rund um Ina Academy. Du kannst dich jederzeit wieder abmelden.</p>
-        <div class="newsletter-frame">
-<iframe width="540" height="800" src="https://d94f9f30.sibforms.com/v2/serve/MUIFAPSllvHbG6cOYgdYribv1b5Ce9y5wSBLlyt5TQFMuXaJHM4OZq5svFrYtJE9GceAHdvD9XwBI818-dJdeAMpjd6lVieTFuuPXUPoJnu0tOzudfxA-bRFOlv0qLGnkuMfOlmbBZbhcM3pqw1MhJUe2iO1x5SGO_9qwF43w60qF99E7pzc4sYDNXXcxa5be41Q-513acXYvT-VcQ==" frameborder="0" scrolling="auto" allowfullscreen style="display: block; margin-left: auto; margin-right: auto; max-width: 100%;"></iframe>
+    <!-- ANSATZ -->
+    <section class="approach" aria-labelledby="approach-title">
+      <div class="wrap">
+        <div class="head center">
+          <h2 id="approach-title">So funktioniert unser Ansatz</h2>
+          <p class="lead-italic">Gesundheitskompetenz beginnt damit, Fragen zu stellen.</p>
+          <p class="muted" style="max-width: 720px">Bei uns bekommst du Wissen statt starrer Regeln und Heilsversprechen – und den Raum, deine eigenen Entscheidungen zu treffen.</p>
         </div>
+        <div class="grid-4">
+          <div class="approach-card">
+            <span class="icon-circle"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg></span>
+            <p class="title">Zusammenhänge verstehen</p>
+            <p>Du lernst verschiedene körperliche, psychische und lebensstilbezogene Faktoren kennen, die im Zusammenhang mit Gesundheit und Wohlbefinden betrachtet werden.</p>
+          </div>
+          <div class="approach-card">
+            <span class="icon-circle"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M3 11h18"/></svg></span>
+            <p class="title">Informationen einordnen</p>
+            <p>Wir beschäftigen uns mit möglichen Einflussfaktoren und zeigen dir, wie du zwischen wissenschaftlichen Erkenntnissen, plausiblen Erklärungsansätzen und Erfahrungswissen unterscheiden kannst.</p>
+          </div>
+          <div class="approach-card">
+            <span class="icon-circle"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M6 21V3h12v18"/><path d="M6 3l8 3v15"/><path d="M11.5 12.5h.01"/></svg></span>
+            <p class="title">Möglichkeiten kennenlernen</p>
+            <p>Du erhältst Einblicke in Ernährung, Mikronährstoffe, Pflanzenheilkunde und weitere Ansätze. Dabei lernst du unterschiedliche Perspektiven kennen – von alltagsnahen Möglichkeiten bis hin zu weniger bekannten Ansätzen.</p>
+          </div>
+          <div class="approach-card">
+            <span class="icon-circle"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 5h-7"/><path d="M10 5H3"/><path d="M21 12h-9"/><path d="M8 12H3"/><path d="M21 19h-5"/><path d="M12 19H3"/><path d="M14 3v4"/><path d="M8 10v4"/><path d="M16 17v4"/></svg></span>
+            <p class="title">Selbstbestimmt lernen</p>
+            <p>Du entscheidest, welche Themen dich interessieren, wann du lernst und welche Inhalte du vertiefen möchtest. Du kannst die Videos in deinem eigenen Tempo durchlaufen und bei Bedarf wiederholen.</p>
+          </div>
+        </div>
+        <div class="note-box">
+          <div>
+            <p style="color: #2b3434">Je nach Angebot kannst du zusätzlich einen persönlichen Gesprächstermin buchen, um offene Fragen zu den Kursinhalten zu besprechen.</p>
+            <p class="strong">Du brauchst kein medizinisches Vorwissen – nur Neugier und Lust, Zusammenhänge besser zu verstehen.</p>
+          </div>
+          <a href="#module" class="btn btn-dark">Module entdecken</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODULE & THEMEN -->
+    <section id="module" class="modules" aria-labelledby="modules-title">
+      <div class="wrap wrap-wide">
+        <div class="head center">
+          <p class="eyebrow">Module &amp; Themen</p>
+          <h2 id="modules-title" class="h-section">Finde das Thema, das dich interessiert.</h2>
+          <p class="muted" style="max-width: 760px">Ob Müdigkeit, Darm und Psyche oder Hormone: In unseren Tutorials kannst du dich gezielt mit einzelnen Gesundheitsthemen beschäftigen – verständlich erklärt und in deinem eigenen Tempo.</p>
+        </div>
+        <h3 class="sub">Unsere Themen im Überblick</h3>
+        <div class="grid-4">
+          <article class="module-card">
+            <div class="media" aria-hidden="true"><svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#2f5f63" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="9" width="16" height="6" rx="3" transform="rotate(-35 12 12)"/><path d="M10.3 9.6l3.4 4.8"/><circle cx="18.5" cy="18.5" r="1.2"/><circle cx="5.5" cy="5.5" r="1"/></svg></div>
+            <div class="body">
+              <h4>Müdigkeit &amp; Mikronährstoffe</h4>
+              <p>Erfahre mehr über die Aufgaben wichtiger Mikronährstoffe und den aktuellen Wissensstand zu möglichen Zusammenhängen mit Müdigkeit.</p>
+              <a href="#module" class="more">Tutorial entdecken →</a>
+            </div>
+          </article>
+          <article class="module-card">
+            <div class="media" aria-hidden="true"><svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#2f5f63" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4a4 4 0 0 0-7 2.5A3.5 3.5 0 0 0 4 13a3.5 3.5 0 0 0 4 3h4"/><path d="M12 4a4 4 0 0 1 7 2.5A3.5 3.5 0 0 1 20 13a3.5 3.5 0 0 1-4 3h-4"/><path d="M12 4v12"/><path d="M12 16c0 2-1.5 3-3 3.5"/><path d="M12 16c0 2 1.5 3 3 3.5"/></svg></div>
+            <div class="body">
+              <h4>Darm &amp; Psyche: Das Bauchhirn verstehen</h4>
+              <p>Entdecke, was unter der Darm-Hirn-Achse verstanden wird und welche Zusammenhänge zwischen Darm und Nervensystem erforscht werden.</p>
+              <a href="#module" class="more">Tutorial entdecken →</a>
+            </div>
+          </article>
+          <article class="module-card">
+            <div class="media" aria-hidden="true"><svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#2f5f63" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7.5 4.3v8.4L12 20l-7.5-4.3V7.3z"/><circle cx="12" cy="11.7" r="3"/></svg></div>
+            <div class="body">
+              <h4>Hormone verstehen: Wissen für deinen Alltag</h4>
+              <p>Lerne grundlegende Zusammenhänge der Hormonwirkung kennen und beschäftige dich mit Fragen rund um das Hormonsystem und hormonelle Veränderungen.</p>
+              <a href="#module" class="more">Tutorial entdecken →</a>
+            </div>
+          </article>
+          <article class="module-card">
+            <div class="media" aria-hidden="true"><svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#2f5f63" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-4 0-6.5-2.7-6.5-6 0-3.5 3-5.5 3.5-9 2 1.5 3 3.5 3 5 1-1 1.5-2.5 1.5-4 2.5 2 4.5 4.8 4.5 8 0 3.3-2 6-6 6z"/></svg></div>
+            <div class="body">
+              <h4>Chronische Entzündungen: Grundlagen und wissenschaftliche Erkenntnisse</h4>
+              <p>Erfahre, was Entzündungsprozesse im Körper sind und welche Faktoren im Zusammenhang mit ihnen wissenschaftlich untersucht werden.</p>
+              <a href="#module" class="more">Tutorial entdecken →</a>
+            </div>
+          </article>
+        </div>
+        <div class="btn-center"><a href="#module" class="btn btn-dark">Alle Module entdecken</a></div>
+
+        <div class="path">
+          <div class="head center" style="gap: 8px">
+            <h3>Dein Weg durch die Academy</h3>
+            <p class="muted">Ganz entspannt, in deinem Tempo – so begleitet dich die Academy.</p>
+          </div>
+          <div class="path-steps">
+            <div class="path-line" aria-hidden="true"></div>
+            <ol class="path-grid" style="list-style: none; margin: 0; padding: 0">
+              <li class="step">
+                <span class="icon-circle"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#2f5f63" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg></span>
+                <p class="strong">Thema wählen</p>
+                <p>Wähle ein Thema, das dich interessiert.</p>
+              </li>
+              <li class="step">
+                <span class="icon-circle"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#2f5f63" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l5 3.5-5 3.5z"/></svg></span>
+                <p class="strong">In deinem Tempo lernen</p>
+                <p>Lerne mit Videos, PDFs und Audios – flexibel und in deinem eigenen Tempo.</p>
+              </li>
+              <li class="step">
+                <span class="icon-circle"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#2f5f63" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19 9a2.8 2.8 0 0 0-4-4L4 16z"/><path d="M13.5 6.5l4 4"/></svg></span>
+                <p class="strong">Vertiefen &amp; reflektieren</p>
+                <p>Vertiefe dein Wissen und reflektiere, was du gelernt hast.</p>
+              </li>
+              <li class="step">
+                <span class="icon-circle"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#2f5f63" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4z"/></svg></span>
+                <p class="strong">Jederzeit nachschlagen</p>
+                <p>Greife auf deine Inhalte zurück, wenn du etwas nachlesen oder wiederholen möchtest.</p>
+              </li>
+              <li class="step">
+                <span class="icon-circle filled"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h5v-5h5v-5h5V5h3"/></svg></span>
+                <p class="strong">Weiter wachsen</p>
+                <p>Entdecke weitere Themen, sobald du bereit bist, Neues zu lernen.</p>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <div id="kontakt" class="suggest">
+          <div>
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#2f5f63" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8"/><path d="M8 12h5"/></svg>
+            <div>
+              <p class="title">Vermisst du ein wichtiges Thema?</p>
+              <p class="muted">Schreib uns deine Ideen und Vorschläge gerne über das Kontaktformular.</p>
+            </div>
+          </div>
+          <!-- TODO: Link zum Kontaktformular eintragen, sobald es existiert -->
+          <a href="#kontakt" class="btn btn-outline-dark">Zum Kontaktformular</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER (Brevo-Anmeldeformular) -->
+    <section id="newsletter" class="newsletter" aria-labelledby="newsletter-title">
+      <div class="inner">
+        <div class="intro">
+          <p class="eyebrow">Newsletter</p>
+          <h2 id="newsletter-title">Verpasse nicht den Start der INA Academy</h2>
+          <p>Die Academy ist gerade im Aufbau. Melde dich jetzt an: Wir informieren dich, sobald die ersten Online-Module buchbar sind – und Neukundinnen und Neukunden erhalten zum Start exklusive Aktionen.</p>
+          <p class="small">Kostenlos und jederzeit abbestellbar. Nach der Anmeldung erhältst du eine E-Mail zur Bestätigung. Details in der <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+        </div>
+        <div class="newsletter-frame">
+          <iframe title="Newsletter-Anmeldung" loading="lazy" src="https://d94f9f30.sibforms.com/v2/serve/MUIFAPSllvHbG6cOYgdYribv1b5Ce9y5wSBLlyt5TQFMuXaJHM4OZq5svFrYtJE9GceAHdvD9XwBI818-dJdeAMpjd6lVieTFuuPXUPoJnu0tOzudfxA-bRFOlv0qLGnkuMfOlmbBZbhcM3pqw1MhJUe2iO1x5SGO_9qwF43w60qF99E7pzc4sYDNXXcxa5be41Q-513acXYvT-VcQ==" scrolling="auto" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="faq" aria-labelledby="faq-title">
+      <div class="wrap">
+        <div class="head center" style="gap: 12px">
+          <h2 id="faq-title" class="h-section">Noch Fragen?</h2>
+          <p class="muted">Wir klären die häufigsten Punkte direkt hier.</p>
+        </div>
+        <div class="faq-list">
+          <details><summary>Brauche ich medizinisches Vorwissen?<span class="plus" aria-hidden="true">+</span></summary><p>Nein. Alle Inhalte sind so erklärt, dass auch Einsteigerinnen und Einsteiger ohne Vorkenntnisse sie gut verstehen.</p></details>
+          <details><summary>Wie lange habe ich Zugriff auf die Inhalte?<span class="plus" aria-hidden="true">+</span></summary><p>Du hast dauerhaft Zugriff – und kannst die Inhalte beliebig oft wiederholen.</p></details>
+          <details><summary>Was ist der Unterschied zwischen Modul und Einzeltutorial?<span class="plus" aria-hidden="true">+</span></summary><p>Ein Modul umfasst mehrere thematisch aufeinander aufbauende Tutorials. Ein Einzeltutorial ist ein kompakter Einstieg in ein Spezialthema (z. B. Stress, Ernährung, Schilddrüse) – ideal zum Kennenlernen.</p></details>
+          <details><summary>Sind die Module für Berufstätige geeignet?<span class="plus" aria-hidden="true">+</span></summary><p>Ja – alle Inhalte sind in kleine Einheiten (10–15 Min.) aufgeteilt, die du anschauen kannst, wann und wo du willst – ganz ohne Druck oder Zeitvorgaben.</p></details>
+          <details><summary>Ersetzt die INA Academy den Arzt- oder Heilpraktikerbesuch?<span class="plus" aria-hidden="true">+</span></summary><p>Nein. Unsere Plattform ist kein Ersatz für medizinische Diagnostik oder Therapie. Sie dient der Selbsthilfe und ganzheitlichen Orientierung durch Wissensaufbau.</p></details>
+          <details><summary>Wie bezahle ich die Module?<span class="plus" aria-hidden="true">+</span></summary><p>Du kannst ganz einfach mit PayPal, Klarna oder Kreditkarte bezahlen. Weitere Infos findest du im jeweiligen Shop.</p></details>
+          <details><summary>Ich bin chronisch krank oder erschöpft. Kann ich mitmachen?<span class="plus" aria-hidden="true">+</span></summary><p>Ja, wir richten uns speziell an Menschen mit chronischen und diffusen Symptomatiken wie chronischer Müdigkeit, Verdauungsproblemen oder hormonellen Dysbalancen – häufig ohne eindeutige medizinische Diagnose.</p></details>
+          <details><summary>Ich habe noch Fragen. Wie kann ich Unterstützung bekommen?<span class="plus" aria-hidden="true">+</span></summary><p>Du kannst uns jederzeit über das <a href="#kontakt">Kontaktformular</a> erreichen. Auch eine individuelle Online-Beratung ist optional buchbar. Um dir und uns unnötigen Aufwand zu ersparen, empfehlen wir sie erst nach dem Basis-Modul.</p></details>
+          <details><summary>Was passiert, wenn ich ein Modul nicht weiterführen möchte?<span class="plus" aria-hidden="true">+</span></summary><p>Je nach Anbieter (z. B. Digistore24, WooCommerce) bieten wir 14 Tage Widerrufsrecht bei digitalen Produkten. Details findest du in deiner Kaufbestätigung oder in unseren AGB.</p></details>
+        </div>
+        <div class="faq-end">
+          <p>Noch unsicher? Starte einfach mit einem Einzeltutorial und finde heraus, ob es zu dir passt.</p>
+          <a href="#module" class="btn btn-dark">Module entdecken</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOGIN -->
+    <section id="login" class="login" aria-labelledby="login-title">
+      <div class="inner">
+        <div>
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#2f5f63" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><circle cx="12" cy="15.5" r="1.5"/></svg>
+          <div>
+            <h2 id="login-title">Du hast bereits einen Kurs gebucht?</h2>
+            <p class="muted">Melde dich an, um auf deine gebuchten Inhalte zuzugreifen.</p>
+          </div>
+        </div>
+        <!-- TODO: Link zur Lernplattform eintragen -->
+        <a href="#login" class="btn btn-outline-dark">Zum Login</a>
       </div>
     </section>
 
   </main>
 
-  <footer class="site-footer" id="footer">
-    <div class="container">
-      <div class="footer-top">
-        <div class="footer-links">
-          <a href="#">Impressum</a>
-          <a href="#">Datenschutz</a>
-        </div>
-        <div class="social">
-          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
-          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
-          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
-          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
-        </div>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="assets/img/logo-ina-academy.png" alt="INA Academy – Inner Natural Alignment" width="1200" height="546" loading="lazy">
+        <p>Ganzheitliches Gesundheitswissen online – verständlich erklärt, wissenschaftlich orientiert.</p>
       </div>
-      <div class="footer-bottom">
-        <p>© <span id="year">2026</span> Projektname. Alle Rechte vorbehalten.</p>
+      <nav class="footer-nav" aria-label="Fußnavigation">
+        <a href="#start">Start</a>
+        <a href="#mission">Mission</a>
+        <a href="#so-funktionierts">So funktioniert's</a>
+        <a href="#module">Module</a>
+        <a href="#login">Login</a>
+      </nav>
+      <nav class="footer-nav" aria-label="Service und Rechtliches">
+        <a href="#newsletter">Newsletter</a>
+        <a href="#faq">FAQ</a>
+        <a href="#kontakt">Kontakt</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="agb.html">AGB &amp; Widerruf</a>
+      </nav>
+      <div class="footer-cta">
+        <a href="#module" class="btn btn-light">Module entdecken</a>
+        <!-- TODO: Links zu den Social-Media-Profilen eintragen (oder Symbole entfernen) -->
+        <div class="social">
+          <a href="#" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#123233" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#123233" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9l5 3-5 3z"/></svg></a>
+          <a href="#" aria-label="Telegram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#123233" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 4L3 11l6 2 2 6 3-4 5 4z"/><path d="M9 13l12-9"/></svg></a>
+        </div>
+        <p>Diese Webseite wird gefördert durch die Initiative „Bayern vernetzt“.</p>
       </div>
     </div>
+    <div class="footer-bottom"><div>© <span id="year">2026</span> INA Academy · Ina Langer</div></div>
   </footer>
 
   <script>
@@ -443,19 +753,16 @@ Hier erhältst du fundiertes Wissen, verständlich aufbereitet und alltagstaugli
       var toggle = document.getElementById('navToggle');
       var nav = document.getElementById('mainNav');
       var year = document.getElementById('year');
-
       if (year) { year.textContent = new Date().getFullYear(); }
 
-      toggle.addEventListener('click', function () {
-        var open = nav.classList.toggle('open');
+      function setOpen(open) {
+        nav.classList.toggle('open', open);
         toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      });
-
+        toggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+      }
+      toggle.addEventListener('click', function () { setOpen(!nav.classList.contains('open')); });
       nav.querySelectorAll('a').forEach(function (link) {
-        link.addEventListener('click', function () {
-          nav.classList.remove('open');
-          toggle.setAttribute('aria-expanded', 'false');
-        });
+        link.addEventListener('click', function () { setOpen(false); });
       });
     })();
   </script>
