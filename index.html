@@ -18,16 +18,18 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Schriften werden lokal geladen (keine Verbindung zu Google-Servern, DSGVO) -->
-  <link rel="preload" href="assets/fonts/inter-400.woff" as="font" type="font/woff" crossorigin>
-  <link rel="preload" href="assets/fonts/lora-var.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/lora-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/lora-italic-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/img/hero-frau-pflanzen.jpg" as="image" fetchpriority="high">
 
   <style>
     /* ---------- Schriften ---------- */
-    @font-face { font-family: "Inter"; src: url("assets/fonts/inter-400.woff") format("woff"); font-weight: 400; font-style: normal; font-display: swap; }
-    @font-face { font-family: "Inter"; src: url("assets/fonts/inter-500.woff") format("woff"); font-weight: 500; font-style: normal; font-display: swap; }
-    @font-face { font-family: "Inter"; src: url("assets/fonts/inter-600.woff") format("woff"); font-weight: 600; font-style: normal; font-display: swap; }
-    @font-face { font-family: "Lora"; src: url("assets/fonts/lora-var.woff") format("woff"); font-weight: 400 700; font-style: normal; font-display: swap; }
-    @font-face { font-family: "Lora"; src: url("assets/fonts/lora-italic-var.woff") format("woff"); font-weight: 400 700; font-style: italic; font-display: swap; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/inter-400.woff2") format("woff2"), url("assets/fonts/inter-400.woff") format("woff"); font-weight: 400; font-style: normal; font-display: swap; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/inter-500.woff2") format("woff2"), url("assets/fonts/inter-500.woff") format("woff"); font-weight: 500; font-style: normal; font-display: swap; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/inter-600.woff2") format("woff2"), url("assets/fonts/inter-600.woff") format("woff"); font-weight: 600; font-style: normal; font-display: swap; }
+    @font-face { font-family: "Lora"; src: url("assets/fonts/lora-var.woff2") format("woff2"), url("assets/fonts/lora-var.woff") format("woff"); font-weight: 400 700; font-style: normal; font-display: swap; }
+    @font-face { font-family: "Lora"; src: url("assets/fonts/lora-italic-var.woff2") format("woff2"), url("assets/fonts/lora-italic-var.woff") format("woff"); font-weight: 400 700; font-style: italic; font-display: swap; }
 
     /* ---------- Design-Tokens INA Academy ---------- */
     :root {
@@ -366,7 +368,7 @@
   <!-- HEADER -->
   <header class="site-header">
     <div class="header-inner">
-      <a href="#start" class="logo-link"><img src="assets/img/logo-ina-academy.png" alt="INA Academy – Inner Natural Alignment" width="1200" height="546"></a>
+      <a href="#start" class="logo-link"><img src="assets/img/logo-ina-academy.png" alt="INA Academy – Inner Natural Alignment" width="480" height="218"></a>
       <button class="nav-toggle" id="navToggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mainNav"><span></span></button>
       <nav class="main-nav" id="mainNav" aria-label="Hauptnavigation">
         <ul>
@@ -399,7 +401,7 @@
         </div>
       </div>
       <div class="hero-media">
-        <img src="assets/img/hero-frau-pflanzen.jpg" alt="Junge Frau mit geschlossenen Augen vor grünen Pflanzen" width="841" height="750">
+        <img src="assets/img/hero-frau-pflanzen.jpg" alt="Junge Frau mit geschlossenen Augen vor grünen Pflanzen" width="841" height="750" fetchpriority="high">
         <div class="start-card">
           <h2>Sei beim Start dabei</h2>
           <p>Unsere Online-Module zu Darmgesundheit, Müdigkeit, Mikronährstoffen und Hormonen entstehen gerade. Trag dich in den Newsletter ein: So erfährst du zuerst, wann die Module buchbar sind – und sicherst dir unsere exklusiven Startaktionen für Neukundinnen und Neukunden.</p>
@@ -782,7 +784,7 @@
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-brand">
-        <img src="assets/img/logo-ina-academy.png" alt="INA Academy – Inner Natural Alignment" width="1200" height="546" loading="lazy">
+        <img src="assets/img/logo-ina-academy.png" alt="INA Academy – Inner Natural Alignment" width="480" height="218" loading="lazy">
         <p>Ganzheitliches Gesundheitswissen online – verständlich erklärt, wissenschaftlich orientiert.</p>
       </div>
       <nav class="footer-nav" aria-label="Fußnavigation">
