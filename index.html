@@ -22,6 +22,9 @@
   <link rel="preload" href="assets/fonts/lora-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/lora-italic-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/img/hero-frau-pflanzen.jpg" as="image" fetchpriority="high">
+  <!-- Verbindung zu Brevo (Newsletter-Formular) früh aufbauen -->
+  <link rel="preconnect" href="https://d94f9f30.sibforms.com">
+  <link rel="dns-prefetch" href="https://d94f9f30.sibforms.com">
 
   <style>
     /* ---------- Schriften ---------- */
@@ -258,8 +261,12 @@
     .newsletter h2 { font-size: clamp(32px, 3.4vw, 44px); line-height: 1.2; color: var(--white); }
     .newsletter .small { font-size: 13px; line-height: 1.5; color: #e6ebea; }
     .newsletter .small a { color: var(--white); }
-    .newsletter-frame { flex: 1 1 460px; min-width: 0; background: var(--white); padding: 8px; }
-    .newsletter-frame iframe { display: block; width: 100%; max-width: 540px; height: 720px; margin: 0 auto; border: 0; }
+    .newsletter-frame { flex: 1 1 460px; min-width: 0; background: var(--white); padding: 8px; position: relative; min-height: 736px; }
+    .newsletter-frame iframe { position: relative; z-index: 1; display: block; width: 100%; max-width: 540px; height: 720px; margin: 0 auto; border: 0; opacity: 0; transition: opacity .4s ease; }
+    .newsletter-frame iframe.is-loaded { opacity: 1; }
+    .newsletter-loading { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; color: var(--text-muted); font-size: 15px; }
+    .newsletter-loading::before { content: ""; width: 36px; height: 36px; border-radius: 50%; border: 3px solid var(--mint); border-top-color: var(--petrol); animation: nl-spin 0.9s linear infinite; }
+    @keyframes nl-spin { to { transform: rotate(360deg); } }
 
     /* ---------- FAQ ---------- */
     .faq { background: var(--soft); padding: var(--pad-section); }
@@ -694,7 +701,9 @@
           <p class="small">Kostenlos und jederzeit abbestellbar. Nach der Anmeldung erhältst du eine E-Mail zur Bestätigung. Details in der <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
         </div>
         <div class="newsletter-frame">
-          <iframe title="Newsletter-Anmeldung" loading="lazy" src="https://d94f9f30.sibforms.com/v2/serve/MUIFAPSllvHbG6cOYgdYribv1b5Ce9y5wSBLlyt5TQFMuXaJHM4OZq5svFrYtJE9GceAHdvD9XwBI818-dJdeAMpjd6lVieTFuuPXUPoJnu0tOzudfxA-bRFOlv0qLGnkuMfOlmbBZbhcM3pqw1MhJUe2iO1x5SGO_9qwF43w60qF99E7pzc4sYDNXXcxa5be41Q-513acXYvT-VcQ==" scrolling="auto" allowfullscreen></iframe>
+          <div class="newsletter-loading" aria-hidden="true">Anmeldeformular wird geladen …</div>
+          <iframe id="nlFrame" title="Newsletter-Anmeldung" data-src="https://d94f9f30.sibforms.com/v2/serve/MUIFAPSllvHbG6cOYgdYribv1b5Ce9y5wSBLlyt5TQFMuXaJHM4OZq5svFrYtJE9GceAHdvD9XwBI818-dJdeAMpjd6lVieTFuuPXUPoJnu0tOzudfxA-bRFOlv0qLGnkuMfOlmbBZbhcM3pqw1MhJUe2iO1x5SGO_9qwF43w60qF99E7pzc4sYDNXXcxa5be41Q-513acXYvT-VcQ==" scrolling="auto" allowfullscreen></iframe>
+          <noscript><p style="padding:16px"><a href="https://d94f9f30.sibforms.com/v2/serve/MUIFAPSllvHbG6cOYgdYribv1b5Ce9y5wSBLlyt5TQFMuXaJHM4OZq5svFrYtJE9GceAHdvD9XwBI818-dJdeAMpjd6lVieTFuuPXUPoJnu0tOzudfxA-bRFOlv0qLGnkuMfOlmbBZbhcM3pqw1MhJUe2iO1x5SGO_9qwF43w60qF99E7pzc4sYDNXXcxa5be41Q-513acXYvT-VcQ==">Zum Anmeldeformular</a></p></noscript>
         </div>
       </div>
     </section>
@@ -819,6 +828,18 @@
       var nav = document.getElementById('mainNav');
       var year = document.getElementById('year');
       if (year) { year.textContent = new Date().getFullYear(); }
+
+      // Newsletter-Formular (Brevo) gleich nach dem Laden der Seite im Hintergrund vorladen,
+      // damit es beim Hinscrollen schon fertig ist
+      var nl = document.getElementById('nlFrame');
+      if (nl) {
+        nl.addEventListener('load', function () { if (nl.src) nl.classList.add('is-loaded'); });
+        var startNl = function () { if (!nl.src) nl.src = nl.getAttribute('data-src'); };
+        if (document.readyState === 'complete') { setTimeout(startNl, 300); }
+        else { window.addEventListener('load', function () { setTimeout(startNl, 300); }); }
+        // Sicherheitsnetz: wer schnell zum Newsletter springt, bekommt es sofort
+        document.querySelectorAll('a[href="#newsletter"]').forEach(function (a) { a.addEventListener('click', startNl); });
+      }
 
       // Kontaktformular: öffnet das E-Mail-Programm mit vorbereiteter Nachricht
       var form = document.getElementById('contactForm');
