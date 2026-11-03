@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Newsletter & Laborwerte-Kompass – INA Academy</title>
+  <meta name="description" content="Melde dich zum Newsletter der INA Academy an und erhalte den Laborwerte-Kompass kostenlos per E-Mail.">
+  <meta name="theme-color" content="#123233">
+  <link rel="canonical" href="https://inaacademy.de/newsletter.html">
+  <link rel="preload" href="assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/lora-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preconnect" href="https://d94f9f30.sibforms.com">
+  <style>
+    @font-face { font-family: "Inter"; src: url("assets/fonts/inter-400.woff2") format("woff2"), url("assets/fonts/inter-400.woff") format("woff"); font-weight: 400; font-display: swap; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/inter-600.woff2") format("woff2"), url("assets/fonts/inter-600.woff") format("woff"); font-weight: 600; font-display: swap; }
+    @font-face { font-family: "Lora"; src: url("assets/fonts/lora-var.woff2") format("woff2"), url("assets/fonts/lora-var.woff") format("woff"); font-weight: 400 700; font-display: swap; }
+    :root { --dark: #123233; --petrol: #2f5f63; --cream: #f7f1db; --white: #ffffff; --soft: #f6f6f6; --ink: #111111; --text: #1b1f1f; --text-muted: #3f4848; --font-serif: "Lora", Georgia, serif; }
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; }
+    body { font-family: "Inter", "Helvetica Neue", Arial, sans-serif; font-size: 17px; line-height: 1.6; color: var(--text); background: var(--dark); -webkit-font-smoothing: antialiased; }
+    a { color: var(--petrol); }
+    .page { min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 24px 16px 32px; gap: 20px; }
+    .logo img { display: block; height: 56px; width: auto; }
+    .nl-form { width: 100%; max-width: 560px; }
+    .foot { font-size: 13px; color: #c9d4d3; text-align: center; }
+    .foot a { color: #ffffff; }
+    .btn { display: inline-block; font: inherit; font-size: 16px; font-weight: 600; text-decoration: none; padding: 16px 38px; border: 1px solid transparent; cursor: pointer; }
+    .btn-dark { background: var(--dark); color: var(--white); }
+    .btn-dark:hover { background: var(--petrol); }
+    .nl-form { flex: 1 1 460px; min-width: 0; background: var(--white); color: var(--text); padding: clamp(24px, 4vw, 40px); display: flex; flex-direction: column; gap: 16px; }
+    .nl-form .nl-title { font-family: var(--font-serif); font-size: 26px; line-height: 1.25; color: var(--ink); margin: 0; }
+    .nl-form .nl-lead { font-size: 15px; line-height: 1.55; color: var(--text-muted); margin: 0; }
+    .nl-form .field { display: flex; flex-direction: column; gap: 6px; }
+    .nl-form label { font-size: 14px; font-weight: 600; color: var(--ink); }
+    .nl-form input[type="text"], .nl-form input[type="email"] { font: inherit; font-size: 16px; color: var(--ink); background: var(--white); border: 1px solid #8a9494; border-radius: 0; padding: 12px 14px; width: 100%; }
+    .nl-form input:focus { outline: 3px solid #7fb3b7; outline-offset: 1px; border-color: var(--petrol); }
+    .nl-form .consent { display: flex; gap: 12px; align-items: flex-start; font-size: 14px; line-height: 1.55; color: var(--text); }
+    .nl-form .consent input { flex: none; width: 20px; height: 20px; margin-top: 2px; accent-color: var(--petrol); }
+    .nl-form .consent label { font-weight: 400; font-size: 14px; }
+    .nl-form .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+    .nl-form .btn { align-self: stretch; text-align: center; }
+    .nl-form .btn[disabled] { opacity: .6; cursor: wait; }
+    .nl-form .hint { font-size: 13px; line-height: 1.5; color: #4f5a5a; margin: 0; }
+    .nl-form .hint a { color: var(--petrol); }
+    .nl-form .msg { margin: 0; padding: 12px 14px; font-size: 15px; line-height: 1.5; }
+    .nl-form .msg.err { background: #fbeaea; color: #8a1f23; }
+    .nl-form .field-err { font-size: 13px; color: #a3262a; margin: 0; }
+
+    /* Eingebettet (iframe): nur das Formular, ohne Rahmen */
+    .is-embedded body { background: transparent; }
+    .is-embedded .page { min-height: 0; padding: 0; }
+    .is-embedded .logo, .is-embedded .foot { display: none; }
+    .is-embedded .nl-form { max-width: none; }
+  </style>
+  <script>if (window.self !== window.top) document.documentElement.classList.add('is-embedded');</script>
+</head>
+<body>
+  <main class="page">
+    <a class="logo" href="https://inaacademy.de/"><img src="assets/img/logo-ina-academy.png" alt="INA Academy – Inner Natural Alignment" width="480" height="218"></a>
+        <form class="nl-form" id="nlForm" action="https://d94f9f30.sibforms.com/v2/serve/MUIFAPSllvHbG6cOYgdYribv1b5Ce9y5wSBLlyt5TQFMuXaJHM4OZq5svFrYtJE9GceAHdvD9XwBI818-dJdeAMpjd6lVieTFuuPXUPoJnu0tOzudfxA-bRFOlv0qLGnkuMfOlmbBZbhcM3pqw1MhJUe2iO1x5SGO_9qwF43w60qF99E7pzc4sYDNXXcxa5be41Q-513acXYvT-VcQ==" method="post" novalidate>
+          <p class="nl-title">Sei beim Start dabei</p>
+          <p class="nl-lead">Trag dich ein und erhalte als Dankeschön den <strong>Laborwerte-Kompass</strong> kostenlos per E-Mail – eine verständliche Übersicht wichtiger Laborwerte. Außerdem erfährst du so frühzeitig, wann die Module starten, und profitierst von exklusiven Startaktionen.</p>
+          <div class="field">
+            <label for="nl-name">Vorname</label>
+            <input id="nl-name" name="VORNAME" type="text" autocomplete="given-name" required>
+          </div>
+          <div class="field">
+            <label for="nl-mail">E-Mail-Adresse</label>
+            <input id="nl-mail" name="EMAIL" type="email" autocomplete="email" required>
+          </div>
+          <div class="hp" aria-hidden="true"><label for="nl-check">Bitte leer lassen</label><input id="nl-check" name="email_address_check" type="text" tabindex="-1" autocomplete="off" value=""></div>
+          <input type="hidden" name="locale" value="de">
+          <div class="consent">
+            <input id="nl-optin" name="OPT_IN" type="checkbox" value="1" required>
+            <label for="nl-optin"><strong>Ja, ich möchte den kostenlosen Laborwerte-Kompass und den Newsletter der INA Academy per E-Mail erhalten</strong> – mit Gesundheitswissen, Neuigkeiten und Angeboten. Ich kann mich jederzeit über den Link in jeder E-Mail wieder abmelden.</label>
+          </div>
+          <p class="msg err" id="nl-error" role="alert" hidden></p>
+          <button type="submit" class="btn btn-dark" id="nl-submit">Kostenlos anmelden</button>
+          <p class="hint">Hinweise zur Datenverarbeitung und zur Auswertung der Newsletter-Nutzung findest du in der <a href="https://inaacademy.de/datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a>. Der Versand erfolgt über Brevo.</p>
+        </form>
+    <p class="foot"><a href="https://inaacademy.de/">inaacademy.de</a> · <a href="https://inaacademy.de/impressum.html">Impressum</a> · <a href="https://inaacademy.de/datenschutz.html">Datenschutz</a></p>
+  </main>
+  <script>
+    (function () {
+      // Newsletter-Anmeldung: sendet direkt an Brevo (Double-Opt-in bleibt bei Brevo)
+      var goTo = function (u) { try { window.top.location.href = u; } catch (e) { window.location.href = u; } };
+      var nlForm = document.getElementById('nlForm');
+      if (nlForm) {
+        var nlErr = document.getElementById('nl-error');
+        var nlBtn = document.getElementById('nl-submit');
+        var showErr = function (t) { nlErr.textContent = t; nlErr.hidden = false; };
+        nlForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          nlErr.hidden = true;
+          var name = nlForm.VORNAME.value.trim(), mail = nlForm.EMAIL.value.trim();
+          if (!name) { showErr('Bitte gib deinen Vornamen ein.'); nlForm.VORNAME.focus(); return; }
+          if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail)) { showErr('Bitte gib eine gültige E-Mail-Adresse ein.'); nlForm.EMAIL.focus(); return; }
+          if (!nlForm.OPT_IN.checked) { showErr('Bitte bestätige mit dem Häkchen, dass du den Newsletter erhalten möchtest.'); nlForm.OPT_IN.focus(); return; }
+          nlBtn.disabled = true; nlBtn.textContent = 'Wird gesendet …';
+          fetch(nlForm.action + '?isAjax=1', { method: 'POST', body: new FormData(nlForm) })
+            .then(function (r) { return r.json().catch(function () { return { success: r.ok }; }); })
+            .then(function (res) {
+              if (res && res.success) { goTo('https://inaacademy.de/fast-geschafft.html'); return; }
+              var msg = 'Das hat leider nicht geklappt. Bitte prüf deine Angaben und versuch es noch einmal.';
+              if (res && res.errors) { var k = Object.keys(res.errors); if (k.length && typeof res.errors[k[0]] === 'string') msg = res.errors[k[0]]; }
+              showErr(msg);
+            })
+            .catch(function () { showErr('Die Verbindung hat nicht geklappt. Bitte versuch es gleich noch einmal oder schreib uns an hallo@inaacademy.de.'); })
+            .then(function () { nlBtn.disabled = false; nlBtn.textContent = 'Kostenlos anmelden'; });
+        });
+      }
+
+    })();
+  </script>
+</body>
+</html>
