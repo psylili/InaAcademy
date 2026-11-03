@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Anbieter & Partner – INA Academy</title>
-  <meta name="description" content="Anbieter aus den Bereichen Mikronährstoffe und Labordiagnostik – mit Hinweisen zu Affiliate-Links und Neukundenangeboten.">
+  <meta name="description" content="Anbieter aus dem Bereich Mikronährstoffe – mit Hinweisen zu Affiliate-Links und Neukundenangeboten.">
   <meta name="robots" content="noindex, follow">
   <meta name="theme-color" content="#123233">
   <link rel="stylesheet" href="assets/css/legal.css">
@@ -30,6 +30,10 @@
     .card .tag { font-size: 12px; color: var(--text-muted); letter-spacing: 0.04em; }
     .disclaimer { border-top: 1px solid var(--line); padding-top: 24px; font-size: 14px; color: var(--text-muted); }
     .disclaimer h2 { font-size: 20px; margin-top: 0; padding-top: 0; border: 0; }
+    .offer .howto { font-size: 13px; color: var(--text-muted); }
+    .copy { font: inherit; font-size: 12px; font-weight: 600; color: var(--petrol); background: transparent; border: 1px solid var(--petrol); border-radius: 6px; padding: 2px 8px; margin-left: 4px; cursor: pointer; }
+    .copy:hover { background: var(--petrol); color: var(--white); }
+    .offer { line-height: 1.9; }
   </style>
 </head>
 <body>
@@ -44,7 +48,7 @@
   <main>
     <p class="ad-badge">Werbung · Affiliate-Links</p>
     <h1>Anbieter &amp; Partner</h1>
-    <p class="lead">Hier findest du Anbieter aus den Bereichen Mikronährstoffe und Labordiagnostik, mit denen die INA Academy zusammenarbeitet – teilweise mit Angeboten für Neukundinnen und Neukunden.</p>
+    <p class="lead">Hier findest du Anbieter aus dem Bereich Mikronährstoffe, mit denen die INA Academy zusammenarbeitet – mit Angeboten für Neukundinnen und Neukunden.</p>
 
     <div class="notice">
       <p><strong>Transparenz:</strong> Alle Links auf dieser Seite sind Affiliate-Links. Wenn du darüber etwas kaufst, erhalte ich eine Provision. Für dich ändert sich am Preis nichts.</p>
@@ -57,29 +61,37 @@
     <div class="grid">
 
       <article class="card">
-        <div class="logo"><img src="assets/img/partner/ANBIETER1.png" alt="Logo ANBIETER 1" loading="lazy"></div>
-        <h3>ANBIETER 1</h3>
-        <p>KURZBESCHREIBUNG – was der Anbieter verkauft.</p>
-        <div class="offer">Neukundenangebot: RABATT mit dem Code <code>CODE</code></div>
-        <a class="btn" href="AFFILIATE-LINK-1" target="_blank" rel="sponsored noopener">Zum Anbieter*</a>
+        <div class="logo"><img src="assets/img/partner/biogena.png" alt="Logo Biogena" width="480" height="125" loading="lazy"></div>
+        <h3>Biogena</h3>
+        <p>Mikronährstoffe und Nahrungsergänzungsmittel, entwickelt nach dem Reinsubstanzenprinzip.</p>
+        <div class="offer">
+          <strong>Neukundenangebot:</strong> 25&nbsp;€ Rabatt ab einem Mindestbestellwert von 75&nbsp;€.<br>
+          Promo-Code: <code>AD0263268</code> <button class="copy" type="button" data-code="AD0263268">Kopieren</button><br>
+          <span class="howto">Bitte im Warenkorb in das Feld „Promo-Code einlösen“ eingeben.</span>
+        </div>
+        <a class="btn" href="https://biogena.com/de-de?afid=AD0263268" target="_blank" rel="sponsored noopener">Direkt zu Biogena*</a>
+      </article>
+
+      <article class="card">
+        <div class="logo"><img src="assets/img/partner/norsan.png" alt="Logo Norsan" width="480" height="148" loading="lazy"></div>
+        <h3>Norsan</h3>
+        <p>Omega-3-Öle aus Norwegen.</p>
+        <div class="offer">
+          <strong>Neukundenangebot:</strong> 15&nbsp;% Rabatt auf die erste Bestellung.<br>
+          Rabatt-Code: <code>EP607</code> <button class="copy" type="button" data-code="EP607">Kopieren</button>
+        </div>
+        <a class="btn" href="https://www.norsan.de/shop/?norsan=1811" target="_blank" rel="sponsored noopener">Direkt zu Norsan*</a>
       </article>
 
     </div>
 
-    <!-- ===== Labordiagnostik ===== -->
+    <!-- ===== Labordiagnostik – einblenden, sobald ein Anbieter feststeht =====
     <h2 class="group-title">Labordiagnostik</h2>
     <p class="group-intro">Anbieter von Laboruntersuchungen, zum Teil als Test-Set für zu Hause.</p>
     <div class="grid">
-
-      <article class="card">
-        <div class="logo"><img src="assets/img/partner/ANBIETER2.png" alt="Logo ANBIETER 2" loading="lazy"></div>
-        <h3>ANBIETER 2</h3>
-        <p>KURZBESCHREIBUNG – was der Anbieter verkauft.</p>
-        <div class="offer">Neukundenangebot: RABATT mit dem Code <code>CODE</code></div>
-        <a class="btn" href="AFFILIATE-LINK-2" target="_blank" rel="sponsored noopener">Zum Anbieter*</a>
-      </article>
-
+      (Karte wie oben)
     </div>
+    -->
 
     <div class="disclaimer">
       <h2>Wichtige Hinweise</h2>
@@ -102,6 +114,16 @@
       </nav>
     </div>
   </footer>
+
+  <script>
+    document.querySelectorAll('.copy').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var code = b.getAttribute('data-code');
+        var done = function () { b.textContent = 'Kopiert ✓'; setTimeout(function () { b.textContent = 'Kopieren'; }, 2000); };
+        try { navigator.clipboard.writeText(code).then(done, function () {}); } catch (e) {}
+      });
+    });
+  </script>
 
 </body>
 </html>
