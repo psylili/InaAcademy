@@ -22,7 +22,7 @@
   <link rel="preload" href="assets/fonts/lora-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/lora-italic-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/img/hero-frau-pflanzen.jpg" as="image" fetchpriority="high">
-  <!-- Verbindung zu Brevo (Newsletter-Formular) früh aufbauen -->
+  <!-- Verbindung zu Brevo (Newsletter-Anmeldung) früh aufbauen -->
   <link rel="preconnect" href="https://d94f9f30.sibforms.com">
   <link rel="dns-prefetch" href="https://d94f9f30.sibforms.com">
 
@@ -261,12 +261,24 @@
     .newsletter h2 { font-size: clamp(32px, 3.4vw, 44px); line-height: 1.2; color: var(--white); }
     .newsletter .small { font-size: 13px; line-height: 1.5; color: #e6ebea; }
     .newsletter .small a { color: var(--white); }
-    .newsletter-frame { flex: 1 1 460px; min-width: 0; background: var(--white); padding: 8px; position: relative; min-height: 976px; }
-    .newsletter-frame iframe { position: relative; z-index: 1; display: block; width: 100%; max-width: 540px; height: 960px; margin: 0 auto; border: 0; opacity: 0; transition: opacity .4s ease; }
-    .newsletter-frame iframe.is-loaded { opacity: 1; }
-    .newsletter-loading { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; color: var(--text-muted); font-size: 15px; }
-    .newsletter-loading::before { content: ""; width: 36px; height: 36px; border-radius: 50%; border: 3px solid var(--mint); border-top-color: var(--petrol); animation: nl-spin 0.9s linear infinite; }
-    @keyframes nl-spin { to { transform: rotate(360deg); } }
+    .nl-form { flex: 1 1 460px; min-width: 0; background: var(--white); color: var(--text); padding: clamp(24px, 4vw, 40px); display: flex; flex-direction: column; gap: 16px; }
+    .nl-form .nl-title { font-family: var(--font-serif); font-size: 26px; line-height: 1.25; color: var(--ink); margin: 0; }
+    .nl-form .nl-lead { font-size: 15px; line-height: 1.55; color: var(--text-muted); margin: 0; }
+    .nl-form .field { display: flex; flex-direction: column; gap: 6px; }
+    .nl-form label { font-size: 14px; font-weight: 600; color: var(--ink); }
+    .nl-form input[type="text"], .nl-form input[type="email"] { font: inherit; font-size: 16px; color: var(--ink); background: var(--white); border: 1px solid #8a9494; border-radius: 0; padding: 12px 14px; width: 100%; }
+    .nl-form input:focus { outline: 3px solid #7fb3b7; outline-offset: 1px; border-color: var(--petrol); }
+    .nl-form .consent { display: flex; gap: 12px; align-items: flex-start; font-size: 14px; line-height: 1.55; color: var(--text); }
+    .nl-form .consent input { flex: none; width: 20px; height: 20px; margin-top: 2px; accent-color: var(--petrol); }
+    .nl-form .consent label { font-weight: 400; font-size: 14px; }
+    .nl-form .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+    .nl-form .btn { align-self: stretch; text-align: center; }
+    .nl-form .btn[disabled] { opacity: .6; cursor: wait; }
+    .nl-form .hint { font-size: 13px; line-height: 1.5; color: #4f5a5a; margin: 0; }
+    .nl-form .hint a { color: var(--petrol); }
+    .nl-form .msg { margin: 0; padding: 12px 14px; font-size: 15px; line-height: 1.5; }
+    .nl-form .msg.err { background: #fbeaea; color: #8a1f23; }
+    .nl-form .field-err { font-size: 13px; color: #a3262a; margin: 0; }
 
     /* ---------- FAQ ---------- */
     .faq { background: var(--soft); padding: var(--pad-section); }
@@ -362,12 +374,6 @@
       .path-line { display: none; }
       .hero-media { min-height: 520px; }
       .newsletter .intro { position: static; }
-      .newsletter-frame { padding: 0; min-height: 1010px; }
-      .newsletter-frame iframe { height: 1010px; }
-    }
-    @media (max-width: 380px) {
-      .newsletter-frame { min-height: 1040px; }
-      .newsletter-frame iframe { height: 1040px; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -696,7 +702,7 @@
       </div>
     </section>
 
-    <!-- NEWSLETTER (Brevo-Anmeldeformular) -->
+    <!-- NEWSLETTER (eigenes Formular, sendet an Brevo) -->
     <section id="newsletter" class="newsletter" aria-labelledby="newsletter-title">
       <div class="inner">
         <div class="intro">
@@ -705,11 +711,27 @@
           <p>Die Academy ist gerade im Aufbau. Melde dich jetzt an: Wir informieren dich, sobald die ersten Online-Module buchbar sind – und Neukundinnen und Neukunden erhalten zum Start exklusive Aktionen.</p>
           <p class="small">Kostenlos und jederzeit abbestellbar. Nach der Anmeldung erhältst du eine E-Mail zur Bestätigung. Details in der <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
         </div>
-        <div class="newsletter-frame">
-          <div class="newsletter-loading" aria-hidden="true">Anmeldeformular wird geladen …</div>
-          <iframe id="nlFrame" title="Newsletter-Anmeldung" data-src="https://d94f9f30.sibforms.com/v2/serve/MUIFAPSllvHbG6cOYgdYribv1b5Ce9y5wSBLlyt5TQFMuXaJHM4OZq5svFrYtJE9GceAHdvD9XwBI818-dJdeAMpjd6lVieTFuuPXUPoJnu0tOzudfxA-bRFOlv0qLGnkuMfOlmbBZbhcM3pqw1MhJUe2iO1x5SGO_9qwF43w60qF99E7pzc4sYDNXXcxa5be41Q-513acXYvT-VcQ==" scrolling="auto" allowfullscreen></iframe>
-          <noscript><p style="padding:16px"><a href="https://d94f9f30.sibforms.com/v2/serve/MUIFAPSllvHbG6cOYgdYribv1b5Ce9y5wSBLlyt5TQFMuXaJHM4OZq5svFrYtJE9GceAHdvD9XwBI818-dJdeAMpjd6lVieTFuuPXUPoJnu0tOzudfxA-bRFOlv0qLGnkuMfOlmbBZbhcM3pqw1MhJUe2iO1x5SGO_9qwF43w60qF99E7pzc4sYDNXXcxa5be41Q-513acXYvT-VcQ==">Zum Anmeldeformular</a></p></noscript>
-        </div>
+        <form class="nl-form" id="nlForm" action="https://d94f9f30.sibforms.com/v2/serve/MUIFAPSllvHbG6cOYgdYribv1b5Ce9y5wSBLlyt5TQFMuXaJHM4OZq5svFrYtJE9GceAHdvD9XwBI818-dJdeAMpjd6lVieTFuuPXUPoJnu0tOzudfxA-bRFOlv0qLGnkuMfOlmbBZbhcM3pqw1MhJUe2iO1x5SGO_9qwF43w60qF99E7pzc4sYDNXXcxa5be41Q-513acXYvT-VcQ==" method="post" novalidate>
+          <p class="nl-title">Sei beim Start dabei</p>
+          <p class="nl-lead">Trag dich ein und erhalte als Dankeschön den <strong>Laborwerte-Kompass</strong> kostenlos per E-Mail – eine verständliche Übersicht wichtiger Laborwerte. Außerdem erfährst du so frühzeitig, wann die Module starten, und profitierst von exklusiven Startaktionen.</p>
+          <div class="field">
+            <label for="nl-name">Vorname</label>
+            <input id="nl-name" name="VORNAME" type="text" autocomplete="given-name" required>
+          </div>
+          <div class="field">
+            <label for="nl-mail">E-Mail-Adresse</label>
+            <input id="nl-mail" name="EMAIL" type="email" autocomplete="email" required>
+          </div>
+          <div class="hp" aria-hidden="true"><label for="nl-check">Bitte leer lassen</label><input id="nl-check" name="email_address_check" type="text" tabindex="-1" autocomplete="off" value=""></div>
+          <input type="hidden" name="locale" value="de">
+          <div class="consent">
+            <input id="nl-optin" name="OPT_IN" type="checkbox" value="1" required>
+            <label for="nl-optin"><strong>Ja, ich möchte den kostenlosen Laborwerte-Kompass und den Newsletter der INA Academy per E-Mail erhalten</strong> – mit Gesundheitswissen, Neuigkeiten und Angeboten. Ich kann mich jederzeit über den Link in jeder E-Mail wieder abmelden.</label>
+          </div>
+          <p class="msg err" id="nl-error" role="alert" hidden></p>
+          <button type="submit" class="btn btn-dark" id="nl-submit">Kostenlos anmelden</button>
+          <p class="hint">Hinweise zur Datenverarbeitung und zur Auswertung der Newsletter-Nutzung findest du in der <a href="datenschutz.html">Datenschutzerklärung</a>. Der Versand erfolgt über Brevo.</p>
+        </form>
       </div>
     </section>
 
@@ -834,16 +856,31 @@
       var year = document.getElementById('year');
       if (year) { year.textContent = new Date().getFullYear(); }
 
-      // Newsletter-Formular (Brevo) gleich nach dem Laden der Seite im Hintergrund vorladen,
-      // damit es beim Hinscrollen schon fertig ist
-      var nl = document.getElementById('nlFrame');
-      if (nl) {
-        nl.addEventListener('load', function () { if (nl.src) nl.classList.add('is-loaded'); });
-        var startNl = function () { if (!nl.src) nl.src = nl.getAttribute('data-src'); };
-        if (document.readyState === 'complete') { setTimeout(startNl, 300); }
-        else { window.addEventListener('load', function () { setTimeout(startNl, 300); }); }
-        // Sicherheitsnetz: wer schnell zum Newsletter springt, bekommt es sofort
-        document.querySelectorAll('a[href="#newsletter"]').forEach(function (a) { a.addEventListener('click', startNl); });
+      // Newsletter-Anmeldung: sendet direkt an Brevo (Double-Opt-in bleibt bei Brevo)
+      var nlForm = document.getElementById('nlForm');
+      if (nlForm) {
+        var nlErr = document.getElementById('nl-error');
+        var nlBtn = document.getElementById('nl-submit');
+        var showErr = function (t) { nlErr.textContent = t; nlErr.hidden = false; };
+        nlForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          nlErr.hidden = true;
+          var name = nlForm.VORNAME.value.trim(), mail = nlForm.EMAIL.value.trim();
+          if (!name) { showErr('Bitte gib deinen Vornamen ein.'); nlForm.VORNAME.focus(); return; }
+          if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail)) { showErr('Bitte gib eine gültige E-Mail-Adresse ein.'); nlForm.EMAIL.focus(); return; }
+          if (!nlForm.OPT_IN.checked) { showErr('Bitte bestätige mit dem Häkchen, dass du den Newsletter erhalten möchtest.'); nlForm.OPT_IN.focus(); return; }
+          nlBtn.disabled = true; nlBtn.textContent = 'Wird gesendet …';
+          fetch(nlForm.action + '?isAjax=1', { method: 'POST', body: new FormData(nlForm) })
+            .then(function (r) { return r.json().catch(function () { return { success: r.ok }; }); })
+            .then(function (res) {
+              if (res && res.success) { window.location.href = 'fast-geschafft.html'; return; }
+              var msg = 'Das hat leider nicht geklappt. Bitte prüf deine Angaben und versuch es noch einmal.';
+              if (res && res.errors) { var k = Object.keys(res.errors); if (k.length && typeof res.errors[k[0]] === 'string') msg = res.errors[k[0]]; }
+              showErr(msg);
+            })
+            .catch(function () { showErr('Die Verbindung hat nicht geklappt. Bitte versuch es gleich noch einmal oder schreib uns an hallo@inaacademy.de.'); })
+            .then(function () { nlBtn.disabled = false; nlBtn.textContent = 'Kostenlos anmelden'; });
+        });
       }
 
       // Kontaktformular: öffnet das E-Mail-Programm mit vorbereiteter Nachricht
