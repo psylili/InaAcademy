@@ -261,8 +261,8 @@
     .newsletter h2 { font-size: clamp(32px, 3.4vw, 44px); line-height: 1.2; color: var(--white); }
     .newsletter .small { font-size: 13px; line-height: 1.5; color: #e6ebea; }
     .newsletter .small a { color: var(--white); }
-    .newsletter-frame { flex: 1 1 460px; min-width: 0; background: var(--white); padding: 8px; position: relative; min-height: 736px; }
-    .newsletter-frame iframe { position: relative; z-index: 1; display: block; width: 100%; max-width: 540px; height: 720px; margin: 0 auto; border: 0; opacity: 0; transition: opacity .4s ease; }
+    .newsletter-frame { flex: 1 1 460px; min-width: 0; background: var(--white); padding: 8px; position: relative; min-height: 976px; }
+    .newsletter-frame iframe { position: relative; z-index: 1; display: block; width: 100%; max-width: 540px; height: 960px; margin: 0 auto; border: 0; opacity: 0; transition: opacity .4s ease; }
     .newsletter-frame iframe.is-loaded { opacity: 1; }
     .newsletter-loading { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; color: var(--text-muted); font-size: 15px; }
     .newsletter-loading::before { content: ""; width: 36px; height: 36px; border-radius: 50%; border: 3px solid var(--mint); border-top-color: var(--petrol); animation: nl-spin 0.9s linear infinite; }
@@ -362,7 +362,12 @@
       .path-line { display: none; }
       .hero-media { min-height: 520px; }
       .newsletter .intro { position: static; }
-      .newsletter-frame { padding: 0; }
+      .newsletter-frame { padding: 0; min-height: 1010px; }
+      .newsletter-frame iframe { height: 1010px; }
+    }
+    @media (max-width: 380px) {
+      .newsletter-frame { min-height: 1040px; }
+      .newsletter-frame iframe { height: 1040px; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
