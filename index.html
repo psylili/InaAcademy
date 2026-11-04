@@ -254,6 +254,13 @@
     .suggest .title { margin-bottom: 6px; font-family: var(--font-serif); font-size: 22px; color: var(--ink); }
 
     /* ---------- Newsletter ---------- */
+    .recommend { background: var(--white); padding: var(--pad-section); }
+    .recommend .box { display: flex; flex-wrap: wrap; gap: 28px 48px; align-items: center; justify-content: space-between; border: 1px solid var(--line); padding: clamp(28px, 4.5vw, 56px); }
+    .recommend .box > div { flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 14px; }
+    .recommend h2 { font-size: clamp(28px, 3.2vw, 40px); line-height: 1.2; }
+    .recommend .tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 0; padding: 0; list-style: none; }
+    .recommend .tags li { background: var(--soft); color: var(--dark); font-size: 14px; padding: 6px 12px; }
+    .recommend .note { font-size: 14px; color: var(--text-muted); }
     .newsletter { background: var(--dark); color: var(--white); padding: clamp(56px, 7vw, 96px) clamp(20px, 5vw, 48px); }
     .newsletter .inner { max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 32px 64px; align-items: flex-start; }
     .newsletter .intro { flex: 1 1 400px; min-width: 0; display: flex; flex-direction: column; gap: 16px; position: sticky; top: 24px; }
@@ -394,6 +401,7 @@
           <li><a href="#mission">Mission</a></li>
           <li><a href="#so-funktionierts">So funktioniert's</a></li>
           <li><a href="#module">Module</a></li>
+          <li><a href="empfehlungen.html">Empfehlungen</a></li>
           <li><a href="#login">Login</a></li>
           <li><a href="#module" class="btn btn-light">Module entdecken</a></li>
         </ul>
@@ -702,6 +710,22 @@
       </div>
     </section>
 
+    <!-- EMPFEHLUNGEN (Link zur Partnerseite) -->
+    <section id="empfehlungen" class="recommend" aria-labelledby="recommend-title">
+      <div class="wrap">
+        <div class="box">
+          <div>
+            <p class="eyebrow">Empfehlungen</p>
+            <h2 id="recommend-title">Anbieter, die wir selbst nutzen</h2>
+            <p class="muted">Du möchtest wissen, wo wir Mikronährstoffe kaufen oder Laboranalysen machen lassen? Auf unserer Empfehlungsseite haben wir die Anbieter zusammengestellt, die wir selbst nutzen und schätzen.</p>
+            <ul class="tags"><li>Mikronährstoffe</li><li>Labordiagnostik</li><li>weitere folgen</li></ul>
+            <p class="note">Die Seite enthält Affiliate-Links (Werbung). Für dich entstehen dadurch keine zusätzlichen Kosten.</p>
+          </div>
+          <a href="empfehlungen.html" class="btn btn-dark">Zu unseren Empfehlungen</a>
+        </div>
+      </div>
+    </section>
+
     <!-- NEWSLETTER (eigenes Formular, sendet an Brevo) -->
     <section id="newsletter" class="newsletter" aria-labelledby="newsletter-title">
       <div class="inner">
@@ -828,6 +852,7 @@
         <a href="#mission">Mission</a>
         <a href="#so-funktionierts">So funktioniert's</a>
         <a href="#module">Module</a>
+        <a href="empfehlungen.html">Empfehlungen</a>
         <a href="#login">Login</a>
       </nav>
       <nav class="footer-nav" aria-label="Service und Rechtliches">
