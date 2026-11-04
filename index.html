@@ -255,21 +255,28 @@
 
     /* ---------- Newsletter ---------- */
     .recommend { background: var(--white); padding: var(--pad-section); }
-    .recommend .box { display: flex; flex-wrap: wrap; gap: 28px 48px; align-items: center; justify-content: space-between; border: 1px solid var(--line); padding: clamp(28px, 4.5vw, 56px); }
-    .recommend .box > .text { flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 14px; }
+    .recommend .box { display: flex; flex-direction: column; gap: 28px; border: 1px solid var(--line); padding: clamp(28px, 4.5vw, 56px); }
+    .recommend .text { max-width: 760px; display: flex; flex-direction: column; gap: 14px; }
     .recommend h2 { font-size: clamp(28px, 3.2vw, 40px); line-height: 1.2; }
     .recommend .tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 0; padding: 0; list-style: none; }
     .recommend .tags li { background: var(--soft); color: var(--dark); font-size: 14px; padding: 6px 12px; }
-    .recommend .side { flex: 0 1 340px; display: flex; flex-direction: column; gap: 20px; align-items: stretch; }
-    .recommend .brands { display: flex; flex-direction: column; gap: 10px; }
-    .recommend .brands .ad { font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); }
-    .recommend .brands a { display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 18px 20px 16px; background: var(--white); border: 1px solid var(--line); text-decoration: none; text-align: center; }
-    .recommend .brands .wordmark { font-family: var(--font-serif); font-size: 28px; line-height: 1.1; color: var(--dark); }
-    .recommend .brands .desc { font-size: 14px; line-height: 1.45; color: var(--text-muted); }
-    .recommend .brands a:hover { border-color: var(--petrol); }
-    .recommend .brands img { max-height: 44px; max-width: 180px; width: auto; height: auto; display: block; }
-    .recommend .side .btn { text-align: center; }
     .recommend .note { font-size: 14px; color: var(--text-muted); }
+    .recommend .ad { font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 10px; }
+    .marquee { overflow: hidden; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 22px 0;
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+    .marquee-track { display: flex; width: max-content; }
+    .marquee ul { display: flex; align-items: center; gap: clamp(48px, 6vw, 88px); margin: 0; padding: 0 clamp(24px, 3vw, 44px); list-style: none; flex: none; }
+    .marquee li { flex: none; }
+    .marquee a { display: block; opacity: 0.9; transition: opacity .2s; }
+    .marquee a:hover { opacity: 1; }
+    .marquee img { height: 48px; width: auto; max-width: 190px; object-fit: contain; display: block; }
+    .marquee.is-running .marquee-track { animation: marquee var(--marquee-dur, 30s) linear infinite; }
+    .marquee.is-running:hover .marquee-track, .marquee.is-running:focus-within .marquee-track { animation-play-state: paused; }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .marquee:not(.is-running) ul { flex-wrap: wrap; justify-content: center; row-gap: 20px; width: 100%; }
+    .marquee:not(.is-running) .marquee-track { width: 100%; }
+    @media (prefers-reduced-motion: reduce) { .marquee.is-running .marquee-track { animation: none; } }
+    .recommend .box > .btn { align-self: flex-start; text-align: center; }
     .newsletter { background: var(--dark); color: var(--white); padding: clamp(56px, 7vw, 96px) clamp(20px, 5vw, 48px); }
     .newsletter .inner { max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 32px 64px; align-items: flex-start; }
     .newsletter .intro { flex: 1 1 400px; min-width: 0; display: flex; flex-direction: column; gap: 16px; position: sticky; top: 24px; }
@@ -735,15 +742,19 @@
             <ul class="tags"><li>Mikronährstoffe</li><li>Labordiagnostik</li><li>weitere folgen</li></ul>
             <p class="note">Die Seite enthält Affiliate-Links (Werbung). Für dich entstehen dadurch keine zusätzlichen Kosten.</p>
           </div>
-          <div class="side">
-            <div class="brands">
-              <span class="ad">Werbung</span>
-              <a href="empfehlungen.html" aria-label="Biogena – zu den Produktempfehlungen"><img src="assets/img/partner/biogena.png" alt="Logo Biogena" width="480" height="125" loading="lazy"><span class="desc">Mikronährstoffe und Nahrungsergänzungsmittel, entwickelt nach dem Reinsubstanzenprinzip.</span></a>
-              <a href="empfehlungen.html" aria-label="Norsan – zu den Produktempfehlungen"><img src="assets/img/partner/norsan.png" alt="Logo Norsan" width="480" height="148" loading="lazy"><span class="desc">Omega-3-Öle aus Norwegen.</span></a>
-              <a href="empfehlungen.html" aria-label="medivere – zu den Produktempfehlungen"><img src="assets/img/partner/medivere.png" alt="Logo medivere" width="433" height="162" loading="lazy"><span class="desc">Labortests für zu Hause, ausgewertet im Partnerlabor.</span></a>
+          <div>
+            <p class="ad">Werbung</p>
+            <div class="marquee" id="brandMarquee">
+              <div class="marquee-track">
+                <ul aria-label="Anbieter auf unserer Seite mit Produktempfehlungen">
+                  <li><a href="empfehlungen.html"><img src="assets/img/partner/biogena.png" alt="Biogena" width="480" height="125" loading="lazy"></a></li>
+                  <li><a href="empfehlungen.html"><img src="assets/img/partner/norsan.png" alt="Norsan" width="480" height="148" loading="lazy"></a></li>
+                  <li><a href="empfehlungen.html"><img src="assets/img/partner/medivere.png" alt="medivere" width="433" height="162" loading="lazy"></a></li>
+                </ul>
+              </div>
             </div>
-            <a href="empfehlungen.html" class="btn btn-dark">Zu den Produktempfehlungen</a>
           </div>
+          <a href="empfehlungen.html" class="btn btn-dark">Zu den Produktempfehlungen</a>
         </div>
       </div>
     </section>
@@ -964,5 +975,31 @@
     })();
   </script>
 
+  <script>
+    /* Logo-Laufband: Liste so oft wiederholen, bis sie breiter als der Rahmen ist, dann verdoppeln und endlos laufen lassen */
+    (function () {
+      var box = document.getElementById('brandMarquee');
+      if (!box || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var track = box.querySelector('.marquee-track');
+      var list = track.querySelector('ul');
+      var items = Array.prototype.slice.call(list.children);
+      function build() {
+        while (track.children.length > 1) track.removeChild(track.lastChild);
+        while (list.children.length > items.length) list.removeChild(list.lastChild);
+        box.classList.add('is-running');
+        var guard = 0;
+        while (list.scrollWidth < box.clientWidth && guard++ < 10) {
+          items.forEach(function (li) { var c = li.cloneNode(true); c.setAttribute('aria-hidden', 'true'); c.querySelector('a').tabIndex = -1; list.appendChild(c); });
+        }
+        var copy = list.cloneNode(true);
+        copy.setAttribute('aria-hidden', 'true'); copy.removeAttribute('aria-label');
+        copy.querySelectorAll('a').forEach(function (a) { a.tabIndex = -1; });
+        track.appendChild(copy);
+        box.style.setProperty('--marquee-dur', Math.max(20, list.scrollWidth / 40) + 's');
+      }
+      var t; window.addEventListener('resize', function () { clearTimeout(t); t = setTimeout(build, 200); });
+      if (document.readyState === 'complete') build(); else window.addEventListener('load', build);
+    })();
+  </script>
 </body>
 </html>
