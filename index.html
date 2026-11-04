@@ -353,6 +353,10 @@
     .footer-bottom div { max-width: 1240px; margin: 0 auto; padding: 20px clamp(20px, 4vw, 48px); font-size: 13px; color: #d6d6d6; }
 
     /* ---------- Smartphone ---------- */
+    @media (min-width: 961px) and (max-width: 1240px) {
+      .main-nav ul { gap: 8px 22px; }
+      .main-nav li:has(> .btn) { display: none; }
+    }
     @media (max-width: 960px) {
       .nav-toggle {
         display: inline-flex; align-items: center; justify-content: center;
@@ -401,7 +405,7 @@
           <li><a href="#mission">Mission</a></li>
           <li><a href="#so-funktionierts">So funktioniert's</a></li>
           <li><a href="#module">Module</a></li>
-          <li><a href="empfehlungen.html">Empfehlungen</a></li>
+          <li><a href="empfehlungen.html">Produktempfehlungen</a></li>
           <li><a href="#login">Login</a></li>
           <li><a href="#module" class="btn btn-light">Module entdecken</a></li>
         </ul>
@@ -715,13 +719,13 @@
       <div class="wrap">
         <div class="box">
           <div>
-            <p class="eyebrow">Empfehlungen</p>
-            <h2 id="recommend-title">Anbieter, die wir selbst nutzen</h2>
-            <p class="muted">Du möchtest wissen, wo wir Mikronährstoffe kaufen oder Laboranalysen machen lassen? Auf unserer Empfehlungsseite haben wir die Anbieter zusammengestellt, die wir selbst nutzen und schätzen.</p>
+            <p class="eyebrow">Produktempfehlungen</p>
+            <h2 id="recommend-title">Produkte, die wir selbst nutzen oder ausprobiert haben</h2>
+            <p class="muted">Du möchtest wissen, wo wir Mikronährstoffe kaufen oder Laboranalysen machen lassen? Auf unserer Seite mit Produktempfehlungen haben wir Anbieter zusammengestellt, die wir selbst nutzen oder ausprobiert haben.</p>
             <ul class="tags"><li>Mikronährstoffe</li><li>Labordiagnostik</li><li>weitere folgen</li></ul>
             <p class="note">Die Seite enthält Affiliate-Links (Werbung). Für dich entstehen dadurch keine zusätzlichen Kosten.</p>
           </div>
-          <a href="empfehlungen.html" class="btn btn-dark">Zu unseren Empfehlungen</a>
+          <a href="empfehlungen.html" class="btn btn-dark">Zu den Produktempfehlungen</a>
         </div>
       </div>
     </section>
@@ -852,7 +856,7 @@
         <a href="#mission">Mission</a>
         <a href="#so-funktionierts">So funktioniert's</a>
         <a href="#module">Module</a>
-        <a href="empfehlungen.html">Empfehlungen</a>
+        <a href="empfehlungen.html">Produktempfehlungen</a>
         <a href="#login">Login</a>
       </nav>
       <nav class="footer-nav" aria-label="Service und Rechtliches">
