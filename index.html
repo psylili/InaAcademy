@@ -162,6 +162,8 @@
     /* ---------- Beschwerden ---------- */
     .complaints { background: var(--petrol); color: var(--white); padding: clamp(64px, 8vw, 104px) clamp(20px, 5vw, 48px); }
     .complaints .wrap { gap: 44px; }
+    .complaints-head { display: flex; flex-direction: column; gap: 12px; text-align: center; }
+    .complaints-head p { font-size: 19px; color: var(--cream); max-width: 720px; margin: 0 auto; }
     .complaints h2 { text-align: center; font-size: clamp(30px, 3.6vw, 44px); line-height: 1.2; color: var(--white); }
     .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; }
     .complaint { border-top: 1px solid rgba(247,241,219,0.45); padding-top: 20px; display: flex; flex-direction: column; gap: 12px; }
@@ -440,7 +442,7 @@
           <p class="badge"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v3"/><path d="M12 18v3"/><path d="M3 12h3"/><path d="M18 12h3"/><path d="M5.6 5.6l2.1 2.1"/><path d="M16.3 16.3l2.1 2.1"/><path d="M5.6 18.4l2.1-2.1"/><path d="M16.3 7.7l2.1-2.1"/></svg>DIE INA ACADEMY IST IM AUFBAU – START IN KÜRZE</p>
           <h1>Dein Körper spricht</h1>
           <p class="hero-sub">Lerne wieder, ihn zu verstehen.</p>
-          <p class="hero-intro">Du hast Beschwerden, aber bisher keine klare Erklärung dafür? Hier findest du ganzheitliches Gesundheitswissen aus Naturheilkunde, Ernährung und Mikronährstoffkunde – verständlich erklärt, online und in deinem Tempo.</p>
+          <p class="hero-intro">Deine Beschwerden sind noch nicht geklärt? Lerne die Zusammenhänge kennen, die dahinterstecken können. Hier findest du ganzheitliches Gesundheitswissen aus Naturheilkunde, Ernährung und Mikronährstoffkunde – verständlich erklärt, online und in deinem Tempo.</p>
           <div class="btn-row">
             <a href="#module" class="btn btn-light">Module entdecken</a>
           </div>
@@ -460,7 +462,10 @@
     <!-- BESCHWERDEN -->
     <section class="complaints" aria-labelledby="complaints-title">
       <div class="wrap">
-        <h2 id="complaints-title">Du hast Beschwerden, aber bisher keine klare Erklärung dafür?</h2>
+        <div class="complaints-head">
+          <h2 id="complaints-title">Diese Beschwerden können deinen Alltag belasten.</h2>
+          <p>Und manchmal sind die Laborwerte unauffällig – obwohl du dich einfach nicht gut fühlst.</p>
+        </div>
         <div class="grid-4">
           <div class="complaint">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#f7f1db" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3c-2 2-2 4 0 6s2 4 0 6"/><path d="M14 3c-2 2-2 4 0 6s2 4 0 6"/><path d="M5 19h14"/></svg>
@@ -474,13 +479,8 @@
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#f7f1db" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12c2-4 4-4 6 0s4 4 6 0 4-4 6 0"/></svg>
             <p>Stimmungsschwankungen</p>
           </div>
-          <div class="complaint">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#f7f1db" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6"/><path d="M10 3v6L5 19a1.5 1.5 0 0 0 1.3 2h11.4a1.5 1.5 0 0 0 1.3-2L14 9V3"/><path d="M7.5 15h9"/></svg>
-            <p>Unauffällige Laborwerte – aber dir geht es trotzdem nicht gut?</p>
-          </div>
         </div>
         <div class="complaints-text">
-          <p>Diese Beschwerden können deinen Alltag belasten. Und manchmal sind die Laborwerte unauffällig – obwohl du dich einfach nicht gut fühlst.</p>
           <p>Bei der INA Academy – Inner Natural Alignment findest du ganzheitliches Gesundheitswissen, das dir hilft, deinen Körper besser zu verstehen. Entdecke Zusammenhänge aus Naturheilkunde, Ernährung, Mikronährstoffkunde und weiteren Gesundheitsthemen – verständlich erklärt und für dich aufbereitet.</p>
           <p class="tagline">Klar erklärt · Wissenschaftlich orientiert · Ganzheitlich betrachtet</p>
           <a href="#mission" class="btn btn-light">Jetzt entdecken</a>
