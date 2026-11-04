@@ -256,10 +256,17 @@
     /* ---------- Newsletter ---------- */
     .recommend { background: var(--white); padding: var(--pad-section); }
     .recommend .box { display: flex; flex-wrap: wrap; gap: 28px 48px; align-items: center; justify-content: space-between; border: 1px solid var(--line); padding: clamp(28px, 4.5vw, 56px); }
-    .recommend .box > div { flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 14px; }
+    .recommend .box > .text { flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 14px; }
     .recommend h2 { font-size: clamp(28px, 3.2vw, 40px); line-height: 1.2; }
     .recommend .tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 0; padding: 0; list-style: none; }
     .recommend .tags li { background: var(--soft); color: var(--dark); font-size: 14px; padding: 6px 12px; }
+    .recommend .side { flex: 0 1 320px; display: flex; flex-direction: column; gap: 20px; align-items: stretch; }
+    .recommend .brands { display: flex; flex-direction: column; gap: 10px; }
+    .recommend .brands .ad { font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); }
+    .recommend .brands a { display: flex; align-items: center; justify-content: center; height: 76px; padding: 12px 20px; background: var(--white); border: 1px solid var(--line); }
+    .recommend .brands a:hover { border-color: var(--petrol); }
+    .recommend .brands img { max-height: 44px; max-width: 180px; width: auto; height: auto; display: block; }
+    .recommend .side .btn { text-align: center; }
     .recommend .note { font-size: 14px; color: var(--text-muted); }
     .newsletter { background: var(--dark); color: var(--white); padding: clamp(56px, 7vw, 96px) clamp(20px, 5vw, 48px); }
     .newsletter .inner { max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 32px 64px; align-items: flex-start; }
@@ -719,14 +726,21 @@
     <section id="empfehlungen" class="recommend" aria-labelledby="recommend-title">
       <div class="wrap">
         <div class="box">
-          <div>
+          <div class="text">
             <p class="eyebrow">Produktempfehlungen</p>
             <h2 id="recommend-title">Produkte, die wir selbst nutzen oder ausprobiert haben</h2>
             <p class="muted">Du möchtest wissen, wo wir Mikronährstoffe kaufen oder Laboranalysen machen lassen? Auf unserer Seite mit Produktempfehlungen haben wir Anbieter zusammengestellt, die wir selbst nutzen oder ausprobiert haben.</p>
             <ul class="tags"><li>Mikronährstoffe</li><li>Labordiagnostik</li><li>weitere folgen</li></ul>
             <p class="note">Die Seite enthält Affiliate-Links (Werbung). Für dich entstehen dadurch keine zusätzlichen Kosten.</p>
           </div>
-          <a href="empfehlungen.html" class="btn btn-dark">Zu den Produktempfehlungen</a>
+          <div class="side">
+            <div class="brands">
+              <span class="ad">Werbung</span>
+              <a href="empfehlungen.html" aria-label="Biogena – zu den Produktempfehlungen"><img src="assets/img/partner/biogena.png" alt="Logo Biogena" width="480" height="125" loading="lazy"></a>
+              <a href="empfehlungen.html" aria-label="Norsan – zu den Produktempfehlungen"><img src="assets/img/partner/norsan.png" alt="Logo Norsan" width="480" height="148" loading="lazy"></a>
+            </div>
+            <a href="empfehlungen.html" class="btn btn-dark">Zu den Produktempfehlungen</a>
+          </div>
         </div>
       </div>
     </section>
