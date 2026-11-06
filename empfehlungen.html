@@ -34,6 +34,7 @@
     .copy { font: inherit; font-size: 12px; font-weight: 600; color: var(--petrol); background: transparent; border: 1px solid var(--petrol); border-radius: 6px; padding: 2px 8px; margin-left: 4px; cursor: pointer; }
     .copy:hover { background: var(--petrol); color: var(--white); }
     .offer { line-height: 1.9; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
     .card .wordmark { font-family: "Lora", Georgia, serif; font-size: 30px; letter-spacing: 0.02em; color: var(--dark); }
     .products { margin: 0; padding: 0; list-style: none; font-size: 15px; }
     .products li { margin: 0 0 6px; }
@@ -67,7 +68,7 @@
 
       <article class="card">
         <div class="logo"><img src="assets/img/partner/biogena.png" alt="Logo Biogena" width="480" height="125" loading="lazy"></div>
-        <h3>Biogena</h3>
+        <h3 class="sr-only">Biogena</h3>
         <p>Mikronährstoffe und Nahrungsergänzungsmittel, entwickelt nach dem Reinsubstanzenprinzip.</p>
         <div class="offer">
           <strong>Neukundenangebot:</strong> 25&nbsp;€ Rabatt ab einem Mindestbestellwert von 75&nbsp;€.<br>
@@ -79,7 +80,7 @@
 
       <article class="card">
         <div class="logo"><img src="assets/img/partner/norsan.png" alt="Logo Norsan" width="480" height="148" loading="lazy"></div>
-        <h3>Norsan</h3>
+        <h3 class="sr-only">Norsan</h3>
         <p>Omega-3-Öle aus Norwegen.</p>
         <div class="offer">
           <strong>Neukundenangebot:</strong> 15&nbsp;% Rabatt auf die erste Bestellung.<br>
@@ -97,7 +98,7 @@
 
       <article class="card">
         <div class="logo"><img src="assets/img/partner/medivere.png" alt="Logo medivere" width="433" height="162" loading="lazy"></div>
-        <h3>medivere</h3>
+        <h3 class="sr-only">medivere</h3>
         <p>Labortests für zu Hause: Die Probe wird selbst entnommen, kostenlos an das Partnerlabor geschickt und dort ausgewertet.</p>
         <div class="offer">
           <strong>Angebot:</strong> 5&nbsp;% Rabatt mit dem Gutscheincode.<br>
