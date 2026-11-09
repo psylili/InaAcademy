@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ina Langer – Ernährungs- und Mikronährstoffberatung, Gesundheitscoaching online</title>
-  <meta name="description" content="Ina Langer: persönliche Ernährungs- und Mikronährstoffberatung und Gesundheitscoaching online per Video. Zusammenhänge verständlich erklärt, ganzheitlich und auf Augenhöhe.">
+  <title>Ina Langer – Gesundheitswissen aus langjähriger Praxis · Beratung auf Anfrage</title>
+  <meta name="description" content="Ina Langer, ausgebildete Heilpraktikerin und Gründerin der INA Academy. Persönliche Online-Beratung zu Ernährung, Mikronährstoffen und naturheilkundlichen Therapieformen auf Anfrage.">
   <meta name="theme-color" content="#2f5f63">
   <link rel="icon" href="assets/img/logo-ina-langer/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="assets/img/logo-ina-langer/favicon-32.png" sizes="32x32" type="image/png">
@@ -94,6 +94,12 @@
     @media (max-width: 980px) { .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
     @media (max-width: 560px) { .steps { grid-template-columns: 1fr; } }
 
+    .info { display: grid; grid-template-columns: 1.4fr 1fr; gap: 24px; margin: 28px 0 20px; }
+    .info > div { background: var(--white); padding: 26px 24px; }
+    .info h3 { font-family: var(--sans); font-weight: 600; font-size: 18px; margin-bottom: 10px; }
+    .info ul { margin: 0; padding-left: 20px; } .info li { margin-bottom: 6px; } .info p { margin: 0; }
+    @media (max-width: 760px) { .info { grid-template-columns: 1fr; } }
+
     /* Schwerpunkte */
     .focus { background: var(--petrol); color: var(--cream); padding: var(--pad); }
     .focus h2 { color: var(--white); }
@@ -111,11 +117,11 @@
     .care h2 { margin-bottom: 22px; }
     .care ul { margin: 0 0 22px; padding-left: 20px; }
     .care li { margin-bottom: 8px; }
-    .note { font-size: 15px; color: var(--text-muted); background: var(--soft); padding: 16px 18px; border-left: 3px solid var(--petrol); margin: 0; }
+    .note { font-size: 15px; color: var(--text-muted); background: var(--white); padding: 16px 18px; border-left: 3px solid var(--petrol); margin: 0; }
     @media (max-width: 860px) { .care .wrap { grid-template-columns: 1fr; } .care .photo { max-width: 380px; order: -1; } }
 
     /* Academy */
-    .academy { background: var(--soft); padding: var(--pad); }
+    .academy { background: var(--soft); padding: 0 clamp(20px, 5vw, 48px) clamp(64px, 8vw, 112px); }
     .academy .box { background: var(--white); border: 1px solid var(--line); padding: clamp(28px, 4.5vw, 56px); display: flex; flex-wrap: wrap; gap: 24px 48px; align-items: center; justify-content: space-between; }
     .academy .box > div { flex: 1 1 520px; }
     .academy p { margin: 14px 0 0; color: var(--text-muted); }
@@ -143,8 +149,8 @@
       <nav id="nav" aria-label="Hauptmenü">
         <ul>
           <li><a href="#ueber-mich">Über mich</a></li>
+          <li><a href="#schwerpunkte">Themen</a></li>
           <li><a href="#beratung">Beratung</a></li>
-          <li><a href="#schwerpunkte">Schwerpunkte</a></li>
           <li><a href="#kontakt">Kontakt</a></li>
           <li><a href="./" class="acad">INA Academy</a></li>
         </ul>
@@ -157,18 +163,13 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="wrap">
         <div class="txt">
-          <p class="eyebrow">Ina Langer · Gesundheitscoach</p>
-          <h1 id="hero-title">Ernährungs- und Mikronährstoffberatung – <em>persönlich und online</em></h1>
-          <p class="lead">Ich erkläre dir verständlich, wie Ernährung, Nährstoffversorgung, Darm, Hormone und Stress zusammenhängen – und begleite dich dabei, deine eigenen nächsten Schritte zu finden.</p>
+          <p class="eyebrow">Ina Langer</p>
+          <h1 id="hero-title">Gesundheit verstehen – <em>aus langjähriger Praxiserfahrung</em></h1>
+          <p class="lead">Ich bin ausgebildete Heilpraktikerin und Gründerin der INA Academy. Heute gebe ich mein Wissen vor allem in Online-Kursen weiter. Persönliche Beratung biete ich auf Anfrage weiterhin an.</p>
           <div class="actions">
-            <a class="btn btn-cream" href="mailto:hallo@inaacademy.de?subject=Anfrage%20Beratung%20Ina%20Langer">Beratung anfragen</a>
-            <a class="btn btn-line" href="#beratung">So läuft die Beratung ab</a>
+            <a class="btn btn-cream" href="./">Zur INA Academy</a>
+            <a class="btn btn-line" href="#beratung">Beratung auf Anfrage</a>
           </div>
-          <ul class="facts">
-            <li>per Video, ohne Anfahrt</li>
-            <li>langjährige Praxiserfahrung</li>
-            <li>ganzheitlich und auf Augenhöhe</li>
-          </ul>
         </div>
         <div class="photo"><img src="assets/img/ina-langer/portrait.jpg" alt="Porträt von Ina Langer" width="800" height="1000"></div>
       </div>
@@ -182,33 +183,17 @@
           <h2 id="about-title">Hallo, ich bin Ina.</h2>
           <p>Ich bin ausgebildete Heilpraktikerin und habe mehrere Jahre eine eigene Praxis in Nürnberg geführt. Außerdem war ich als Dozentin in der Heilpraktiker-Ausbildung tätig. Schon damals habe ich viele Menschen online beraten – in ganz Deutschland und darüber hinaus.</p>
           <p>In all den Jahren habe ich eines immer wieder erlebt: Je besser Menschen verstehen, was in ihrem Körper passiert, desto sicherer treffen sie ihre eigenen Entscheidungen. Genau darum geht es mir heute.</p>
-          <p>Heute biete ich persönliche Beratung und Gesundheitscoaching online an. Und mit der <a href="./">INA Academy</a> habe ich eine Plattform gegründet, auf der ich mein Wissen in Online-Kursen weitergebe.</p>
+          <p>Mit der <a href="./">INA Academy</a> habe ich eine Plattform gegründet, auf der ich mein Wissen in Online-Kursen weitergebe. Persönliche Beratung mache ich weiterhin gern – auf Anfrage, online per Video und auf Deutsch, Englisch oder Russisch.</p>
           <p class="quote">„Du kennst deinen Körper am besten. Ich helfe dir, seine Signale besser zu verstehen.“</p>
         </div>
       </div>
     </section>
 
-    <section class="steps-sec" id="beratung" aria-labelledby="steps-title">
-      <div class="wrap">
-        <div class="head2">
-          <p class="eyebrow">Online-Beratung</p>
-          <h2 id="steps-title">So läuft die Beratung ab</h2>
-          <p>Bequem per Video von zu Hause aus. Du brauchst nur einen Laptop, ein Tablet oder ein Smartphone mit Kamera.</p>
-        </div>
-        <ol class="steps">
-          <li><h3>Anfrage</h3><p>Du schreibst mir kurz, worum es dir geht. Ich melde mich mit einem Terminvorschlag.</p></li>
-          <li><h3>Fragebogen</h3><p>Vorab bekommst du einen ausführlichen Fragebogen. So nutzen wir die gemeinsame Zeit optimal.</p></li>
-          <li><h3>Gespräch</h3><p>Im Video-Gespräch schauen wir uns deine Situation in Ruhe an – gern auch vorhandene Befunde und Laborwerte.</p></li>
-          <li><h3>Deine Schritte</h3><p>Du bekommst verständliche Empfehlungen zu Ernährung, Nährstoffen und Alltag. Die Entscheidung triffst du.</p></li>
-        </ol>
-      </div>
-    </section>
-
     <section class="focus" id="schwerpunkte" aria-labelledby="focus-title">
       <div class="wrap">
-        <p class="eyebrow">Schwerpunkte</p>
-        <h2 id="focus-title">Themen, bei denen ich dich begleite</h2>
-        <p class="intro">Aus meiner Praxiszeit kenne ich diese Themen besonders gut. Oft hängen sie miteinander zusammen – deshalb schaue ich immer auf das Ganze.</p>
+        <p class="eyebrow">Themen</p>
+        <h2 id="focus-title">Themen aus meiner Praxis</h2>
+        <p class="intro">Mit diesen Themen habe ich in meiner Praxis besonders viel gearbeitet. Oft hängen sie miteinander zusammen – deshalb schaue ich immer auf das Ganze.</p>
         <ul>
           <li><span class="c-icon" aria-hidden="true"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#123233" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v3.5c0 1.6-1.2 2.4-2.6 3.4C4.9 11 4 12.4 4 14.6A6.4 6.4 0 0 0 10.4 21H13a5 5 0 0 0 5-5c0-1.9-1-3.1-2.6-3.7-1.5-.6-2.4-1.5-2.4-3.1V7.5"/><path d="M13 7.5C13 5.3 14.6 4 16.5 4"/><circle cx="19" cy="8" r="1"/><circle cx="20.5" cy="11.5" r=".6"/></svg></span><span>Darmgesundheit &amp; Verdauung</span></li>
           <li><span class="c-icon" aria-hidden="true"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#123233" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="15" height="9" rx="2"/><path d="M20.5 12v3"/><path d="M6.5 12v3"/><path stroke-width="1.3" d="M14 3.2h2.6L14 5.8h2.6"/><path stroke-width="1.2" d="M18.4 1.2h1.7l-1.7 1.7h1.7"/></svg></span><span>Müdigkeit &amp; Erschöpfung</span></li>
@@ -220,20 +205,34 @@
       </div>
     </section>
 
-    <section class="care" aria-labelledby="care-title">
+    <section class="steps-sec" id="beratung" aria-labelledby="steps-title">
       <div class="wrap">
-        <div class="txt">
-          <p class="eyebrow">Mein Anspruch</p>
-          <h2 id="care-title">Zeit, Klarheit und Verständnis</h2>
-          <ul>
-            <li>Ich nehme mir Zeit für dich und deine Geschichte.</li>
-            <li>Ich erkläre Zusammenhänge so, dass du sie wirklich verstehst.</li>
-            <li>Ich schaue auf Ernährung, Nährstoffversorgung, Lebensstil und Belastungen im Zusammenhang.</li>
-            <li>Du entscheidest selbst, was du umsetzen möchtest.</li>
-          </ul>
-          <p class="note">Die Beratung dient der Gesundheitsbildung und ersetzt keine ärztliche Untersuchung, Diagnose oder Behandlung. Bei akuten oder ernsthaften Beschwerden wende dich bitte an deine Ärztin oder deinen Arzt.</p>
+        <div class="head2">
+          <p class="eyebrow">Beratung auf Anfrage</p>
+          <h2 id="steps-title">So läuft eine Beratung ab</h2>
+          <p>Die Beratung findet online per Video-Call statt – auf Deutsch, Englisch oder Russisch. Du brauchst dafür einen Laptop, ein Tablet oder ein Smartphone mit Kamera.</p>
         </div>
-        <div class="photo"><img src="assets/img/ina-langer/gespraech.jpg" alt="Ina Langer im Gespräch" width="800" height="1000" loading="lazy"></div>
+        <ol class="steps">
+          <li><h3>Terminvereinbarung</h3><p>Du schreibst mir kurz, worum es dir geht. Dann vereinbaren wir einen Termin.</p></li>
+          <li><h3>Erste Beratung</h3><p>Im Video-Call mit Kamera schilderst du dein Anliegen. Gemeinsam gehen wir deine Beschwerden, deine Vorgeschichte und vorhandene Befunde durch.</p></li>
+          <li><h3>Recherche</h3><p>Wenn nötig, recherchiere ich im Anschluss gezielt zu deiner Fragestellung.</p></li>
+          <li><h3>Zweite Beratung</h3><p>Wir besprechen die Ergebnisse. Du bekommst eine Orientierung, welche Möglichkeiten für dich in Frage kommen.</p></li>
+        </ol>
+        <div class="info">
+          <div>
+            <h3>Worum es in der Beratung gehen kann</h3>
+            <ul>
+              <li>Ernährung und Versorgung mit Mikronährstoffen</li>
+              <li>Einordnung vorhandener Laborwerte und Befunde</li>
+              <li>naturheilkundliche Therapieformen, die für dich in Frage kommen können – und worauf du bei der Auswahl achten kannst</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Preis</h3>
+            <p>Für beide Beratungen einschließlich Recherche gilt ein Pauschalpreis. Näheres erfährst du auf Anfrage.</p>
+          </div>
+        </div>
+        <p class="note">Die Beratung dient der Information und Orientierung. Sie ersetzt keine ärztliche Untersuchung, Diagnose oder Behandlung. Bei akuten oder ernsthaften Beschwerden wende dich bitte an deine Ärztin oder deinen Arzt.</p>
       </div>
     </section>
 
@@ -255,10 +254,10 @@
 
     <section class="contact" id="kontakt" aria-labelledby="contact-title">
       <div class="wrap">
-        <h2 id="contact-title">Lass uns sprechen</h2>
-        <p>Schreib mir kurz, worum es dir geht. Ich melde mich mit einem Terminvorschlag und allen Infos zu Ablauf und Kosten.</p>
-        <a class="btn btn-cream" href="mailto:hallo@inaacademy.de?subject=Anfrage%20Beratung%20Ina%20Langer">Beratung anfragen</a>
-        <p class="small">E-Mail: <a href="mailto:hallo@inaacademy.de" style="color:var(--cream)">hallo@inaacademy.de</a> · Preise auf Anfrage</p>
+        <h2 id="contact-title">Bei Interesse schreib mir</h2>
+        <p>Schreib mir kurz, worum es dir geht – dann erfährst du alles Nähere zu Ablauf, Terminen und Preis.</p>
+        <a class="btn btn-cream" href="mailto:hallo@inaacademy.de?subject=Anfrage%20Beratung%20Ina%20Langer">E-Mail schreiben</a>
+        <p class="small">hallo@inaacademy.de</p>
       </div>
     </section>
 
