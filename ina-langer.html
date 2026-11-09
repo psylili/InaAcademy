@@ -100,8 +100,7 @@
     .st-ic { width: 58px; height: 58px; border-radius: 50%; background: var(--c); color: #fff; display: inline-flex; align-items: center; justify-content: center; margin: 0 auto 14px; box-shadow: 0 0 0 6px var(--c-soft), 0 6px 16px rgba(18,50,51,.12); }
     .steps { counter-reset: s; }
     .steps li { counter-increment: s; }
-    .steps li::after { content: counter(s); position: absolute; top: 16px; left: 50%; margin-left: 13px; width: 28px; height: 28px; border-radius: 50%; background: #fff; color: var(--c-dark); border: 2px solid var(--c); font: 600 14px/24px var(--sans, inherit); text-align: center; box-sizing: border-box; }
-    .st-ic svg { width: 32px; height: 32px; }
+    .st-ic::before { content: counter(s); font-family: var(--serif); font-size: 28px; line-height: 1; color: #fff; }
     .steps h3 { font-family: var(--serif); font-weight: 400; font-size: 21px; color: var(--c-dark); margin-bottom: 10px; }
     .steps p { margin: 0; font-size: 16px; color: var(--text-muted); line-height: 1.6; }
     @media (max-width: 980px) { .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } .steps::before { display: none; } }
@@ -231,10 +230,10 @@
           <p>Die Beratung findet online per Video-Call statt – auf Deutsch, Englisch oder Russisch. Du brauchst dafür einen Laptop, ein Tablet oder ein Smartphone mit Kamera.</p>
         </div>
         <ol class="steps">
-          <li><span class="st-ic" aria-hidden="true"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M3.5 7l8.5 6.2L20.5 7"/></svg></span><h3>Terminvereinbarung</h3><p>Du schreibst mir kurz, worum es dir geht. Dann vereinbaren wir einen Termin.</p></li>
-          <li><span class="st-ic" aria-hidden="true"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v7a2.5 2.5 0 0 1-2.5 2.5H10l-4 3.5V16H6.5A2.5 2.5 0 0 1 4 13.5z"/><path d="M12 12.6s-3-1.8-3-3.6a1.6 1.6 0 0 1 3-.8 1.6 1.6 0 0 1 3 .8c0 1.8-3 3.6-3 3.6z"/></svg></span><h3>Erstes Gespräch</h3><p>Im Video-Call mit Kamera erzählst du mir, was dich beschäftigt und was du dir wünschst.</p></li>
-          <li><span class="st-ic" aria-hidden="true"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6.5C10.3 5.2 7.8 4.6 4 4.8v12.6c3.8-.2 6.3.4 8 1.7 1.7-1.3 4.2-1.9 8-1.7V4.8c-3.8-.2-6.3.4-8 1.7z"/><path d="M12 6.5v12.6"/></svg></span><h3>Recherche</h3><p>Wenn nötig, recherchiere ich im Anschluss Hintergrundinformationen zu deinen Fragen.</p></li>
-          <li><span class="st-ic" aria-hidden="true"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-7"/><path d="M12 14c0-3.5 2.5-6 6.5-6 0 3.5-2.5 6-6.5 6z"/><path d="M12 16.5c0-3-2-5.2-5.5-5.2 0 3 2 5.2 5.5 5.2z"/></svg></span><h3>Zweites Gespräch</h3><p>Wir besprechen die Informationen. Du bekommst Anregungen für Ernährung, Alltag und Lebensstil – und Fragen, die du mit deiner Ärztin oder deinem Arzt klären kannst.</p></li>
+          <li><span class="st-ic" aria-hidden="true"></span><h3>Terminvereinbarung</h3><p>Du schreibst mir kurz, worum es dir geht. Dann vereinbaren wir einen Termin.</p></li>
+          <li><span class="st-ic" aria-hidden="true"></span><h3>Erstes Gespräch</h3><p>Im Video-Call mit Kamera erzählst du mir, was dich beschäftigt und was du dir wünschst.</p></li>
+          <li><span class="st-ic" aria-hidden="true"></span><h3>Recherche</h3><p>Wenn nötig, recherchiere ich im Anschluss Hintergrundinformationen zu deinen Fragen.</p></li>
+          <li><span class="st-ic" aria-hidden="true"></span><h3>Zweites Gespräch</h3><p>Wir besprechen die Informationen. Du bekommst Anregungen für Ernährung, Alltag und Lebensstil – und Fragen, die du mit deiner Ärztin oder deinem Arzt klären kannst.</p></li>
         </ol>
         <div class="info">
           <div>
