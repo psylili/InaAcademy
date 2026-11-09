@@ -76,11 +76,16 @@
 
     /* Über mich */
     .about { padding: var(--pad); }
-    .about .wrap { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: clamp(32px, 6vw, 88px); align-items: center; }
+    .about .wrap { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: clamp(32px, 6vw, 88px); align-items: start; }
+    .about .photo { position: sticky; top: 110px; }
     .about .txt p { margin: 0 0 16px; }
     .about h2 { margin-bottom: 22px; }
+    .about .sub { font-family: var(--sans); font-weight: 600; font-size: 18px; color: var(--ink); margin: 26px 0 12px; }
+    .about .ways { list-style: none; margin: 0 0 20px; padding: 0; }
+    .about .ways li { position: relative; padding-left: 26px; margin-bottom: 10px; }
+    .about .ways li::before { content: ""; position: absolute; left: 4px; top: 10px; width: 8px; height: 8px; border-radius: 50%; background: var(--petrol); }
     .about .quote { font-family: var(--serif); font-style: italic; font-size: 22px; color: var(--petrol); border-left: 3px solid var(--petrol); padding-left: 18px; margin: 26px 0 0; }
-    @media (max-width: 860px) { .about .wrap { grid-template-columns: 1fr; } .about .photo { max-width: 380px; } }
+    @media (max-width: 860px) { .about .wrap { grid-template-columns: 1fr; } .about .photo { max-width: 380px; position: static; } }
 
     /* Ablauf */
     .steps-sec { background: var(--soft); padding: var(--pad); }
@@ -181,9 +186,16 @@
         <div class="txt">
           <p class="eyebrow">Über mich</p>
           <h2 id="about-title">Hallo, ich bin Ina.</h2>
-          <p>Ich bin ausgebildete Heilpraktikerin und habe mehrere Jahre eine eigene Praxis in Nürnberg geführt. Außerdem war ich als Dozentin in der Heilpraktiker-Ausbildung tätig. Schon damals habe ich viele Menschen online beraten – in ganz Deutschland und darüber hinaus.</p>
-          <p>In all den Jahren habe ich eines immer wieder erlebt: Je besser Menschen verstehen, was in ihrem Körper passiert, desto sicherer treffen sie ihre eigenen Entscheidungen. Genau darum geht es mir heute.</p>
-          <p>Mit der <a href="./">INA Academy</a> habe ich eine Plattform gegründet, auf der ich mein Wissen in Online-Kursen weitergebe. Persönliche Beratung mache ich weiterhin gern – auf Anfrage, online per Video und auf Deutsch, Englisch oder Russisch.</p>
+          <p>Mich hat schon immer fasziniert, wie unser Körper funktioniert – und warum er manchmal aus dem Gleichgewicht gerät. Den Zusammenhängen hinter Beschwerden auf die Spur zu kommen, ist bis heute meine Leidenschaft.</p>
+          <p>Ich bin ausgebildete Heilpraktikerin und bilde mich seit 2013 laufend fort, mit Schwerpunkt auf Labordiagnostik und Mikronährstoffmedizin. Mehrere Jahre hatte ich eine eigene Praxis in Nürnberg und war Dozentin in der Heilpraktiker-Ausbildung. Heute vertiefe ich mein Wissen zusätzlich in der Psychologie, weil mich die Verbindung zwischen mentalen und körperlichen Prozessen immer mehr beschäftigt.</p>
+          <h3 class="sub">So arbeite ich</h3>
+          <ul class="ways">
+            <li><strong>Ich höre genau zu.</strong> Deine Geschichte gehört dazu – körperlich, emotional und im Alltag.</li>
+            <li><strong>Ich schaue genau hin.</strong> Laborwerte und Befunde betrachte ich im Zusammenhang, nicht als einzelne Zahlen.</li>
+            <li><strong>Ich erkläre verständlich.</strong> Du sollst nachvollziehen können, was in deinem Körper passiert.</li>
+            <li><strong>Du entscheidest.</strong> Ich zeige dir Möglichkeiten auf – welchen Weg du gehst, bestimmst du.</li>
+          </ul>
+          <p>Ich spreche Deutsch, Russisch und Englisch und habe schon in meiner Praxiszeit viele Menschen online beraten. Mit der <a href="./">INA Academy</a> gebe ich mein Wissen heute in Online-Kursen weiter – persönliche Beratung mache ich auf Anfrage weiterhin gern.</p>
           <p class="quote">„Du kennst deinen Körper am besten. Ich helfe dir, seine Signale besser zu verstehen.“</p>
         </div>
       </div>
