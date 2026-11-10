@@ -107,11 +107,10 @@
     @media (max-width: 560px) { .steps { grid-template-columns: 1fr; } }
 
     .reviews { margin: 34px 0 38px; text-align: center; }
-    .reviews-title { font-family: var(--serif); font-size: 21px; color: var(--petrol); margin: 0 0 16px; }
+    .reviews-title { font-size: 14px; color: var(--text-muted); opacity: .85; margin: 0 0 12px; }
     .reviews-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 18px; }
     .reviews .g-rating { margin: 0; }
-    @media (max-width: 480px) { .reviews .g-rating { flex-direction: row; width: 100%; justify-content: flex-start; gap: 16px; padding: 14px 18px; } .reviews .g-left { padding: 0 16px 0 0; border-bottom: 0; border-right: 1px solid rgba(47,95,99,.15); } .reviews .g-right { text-align: left; align-items: flex-start; } .reviews .g-score { font-size: 32px; } .reviews .g-stars { font-size: 15px; } .reviews-title { font-size: 19px; } }
-    .reviews-stand { font-size: 13px; color: var(--text-muted); margin: 12px 0 0; }
+    @media (max-width: 480px) { .reviews .g-rating { flex-direction: row; width: 100%; justify-content: flex-start; gap: 16px; padding: 14px 18px; } .reviews .g-left { padding: 0 16px 0 0; border-bottom: 0; border-right: 1px solid rgba(47,95,99,.15); } .reviews .g-right { text-align: left; align-items: flex-start; } .reviews .g-score { font-size: 32px; } .reviews .g-stars { font-size: 15px; } }
     .g-rating { display: flex; width: fit-content; max-width: 100%; align-items: center; gap: 22px; margin: 34px auto 38px; padding: 18px 28px 18px 24px; border-radius: 20px; background: var(--white); border: 1px solid rgba(47,95,99,.14); box-shadow: 0 10px 30px rgba(18,50,51,.08); color: var(--ink); text-decoration: none; transition: box-shadow .2s, transform .2s; }
     .g-rating:hover { box-shadow: 0 14px 36px rgba(18,50,51,.14); transform: translateY(-2px); }
     .g-left { display: flex; flex-direction: column; align-items: center; padding-right: 22px; border-right: 1px solid rgba(47,95,99,.15); }
@@ -281,7 +280,6 @@
               </span>
             </a>
           </div>
-          <p class="reviews-stand">Stand: <span data-g="stand">10.11.2026</span></p>
         </div>
         <div class="info">
           <div>
