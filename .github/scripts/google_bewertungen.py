@@ -19,7 +19,8 @@ def hole_daten():
     return float(d["rating"]), int(d["userRatingCount"])
 
 def eintragen(html, rating, count, heute):
-    score = f"{rating:.1f}".replace(".", ",")
+    zahl = f"{rating:.1f}".replace(".", ",")
+    score = (zahl[:-2] if zahl.endswith(",0") else zahl) + "/5"   # z. B. 5/5 oder 4,7/5
     pct = f"{round(rating / 5 * 100)}%"
     neu = re.sub(r'(data-g="score">)[^<]*', rf"\g<1>{score}", html)
     neu = re.sub(r'style="--pct:[^"]*"( data-g="pct")', rf'style="--pct:{pct}"\1', neu)
