@@ -106,6 +106,12 @@
     @media (max-width: 980px) { .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } .steps::before { display: none; } }
     @media (max-width: 560px) { .steps { grid-template-columns: 1fr; } }
 
+    .reviews { margin: 34px 0 38px; text-align: center; }
+    .reviews-title { font-family: var(--serif); font-size: 21px; color: var(--petrol); margin: 0 0 16px; }
+    .reviews-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 18px; }
+    .reviews .g-rating { margin: 0; }
+    @media (max-width: 480px) { .reviews .g-rating { flex-direction: row; width: 100%; justify-content: flex-start; gap: 16px; padding: 14px 18px; } .reviews .g-left { padding: 0 16px 0 0; border-bottom: 0; border-right: 1px solid rgba(47,95,99,.15); } .reviews .g-right { text-align: left; align-items: flex-start; } .reviews .g-score { font-size: 32px; } .reviews .g-stars { font-size: 15px; } .reviews-title { font-size: 19px; } }
+    .reviews-stand { font-size: 13px; color: var(--text-muted); margin: 12px 0 0; }
     .g-rating { display: flex; width: fit-content; max-width: 100%; align-items: center; gap: 22px; margin: 34px auto 38px; padding: 18px 28px 18px 24px; border-radius: 20px; background: var(--white); border: 1px solid rgba(47,95,99,.14); box-shadow: 0 10px 30px rgba(18,50,51,.08); color: var(--ink); text-decoration: none; transition: box-shadow .2s, transform .2s; }
     .g-rating:hover { box-shadow: 0 14px 36px rgba(18,50,51,.14); transform: translateY(-2px); }
     .g-left { display: flex; flex-direction: column; align-items: center; padding-right: 22px; border-right: 1px solid rgba(47,95,99,.15); }
@@ -249,17 +255,34 @@
           <li><span class="st-ic" aria-hidden="true"></span><h3>Recherche</h3><p>Wenn nötig, recherchiere ich im Anschluss Hintergrundinformationen zu deinen Fragen.</p></li>
           <li><span class="st-ic" aria-hidden="true"></span><h3>Zweites Gespräch</h3><p>Wir besprechen die Informationen. Du bekommst Anregungen für Ernährung, Alltag und Lebensstil – und Fragen, die du mit deiner Ärztin oder deinem Arzt klären kannst.</p></li>
         </ol>
-        <a class="g-rating" href="https://search.google.com/local/reviews?placeid=ChIJHVvZmepXn0cRDlbZgkvTv4c" target="_blank" rel="noopener" aria-label="Google-Rezensionen von Ina Langer ansehen">
-          <span class="g-left">
-            <span class="g-score" data-g="score">5,0</span>
-            <span class="g-stars" aria-hidden="true" style="--pct:100%" data-g="pct"><span>★★★★★</span></span>
-          </span>
-          <span class="g-right">
-            <span class="g-title">Google-Rezensionen</span>
-            <span class="g-count"><span data-g="count">9</span> Bewertungen · Stand <span data-g="stand">10.11.2026</span></span>
-            <span class="g-more">Alle Rezensionen lesen →</span>
-          </span>
-        </a>
+        <div class="reviews">
+          <p class="reviews-title">Bewertungen aus meiner früheren Praxistätigkeit</p>
+          <div class="reviews-row">
+            <a class="g-rating" href="https://search.google.com/local/reviews?placeid=ChIJHVvZmepXn0cRDlbZgkvTv4c" target="_blank" rel="noopener" aria-label="Bewertungen auf Google ansehen">
+              <span class="g-left">
+                <span class="g-score" data-g="score">5,0</span>
+                <span class="g-stars" aria-hidden="true" style="--pct:100%" data-g="pct"><span>★★★★★</span></span>
+              </span>
+              <span class="g-right">
+                <span class="g-title">Google</span>
+                <span class="g-count"><span data-g="count">9</span> Bewertungen</span>
+                <span class="g-more">Bewertungen lesen →</span>
+              </span>
+            </a>
+            <a class="g-rating" href="https://www.jameda.de/profil/ina-langer-2#profile-reviews" target="_blank" rel="noopener" aria-label="Bewertungen auf jameda ansehen">
+              <span class="g-left">
+                <span class="g-score">5/5</span>
+                <span class="g-stars" aria-hidden="true" style="--pct:100%"><span>★★★★★</span></span>
+              </span>
+              <span class="g-right">
+                <span class="g-title">jameda</span>
+                <span class="g-count">15 Bewertungen</span>
+                <span class="g-more">Bewertungen lesen →</span>
+              </span>
+            </a>
+          </div>
+          <p class="reviews-stand">Stand: <span data-g="stand">10.11.2026</span></p>
+        </div>
         <div class="info">
           <div>
             <h3>Worum es in den Gesprächen gehen kann</h3>
