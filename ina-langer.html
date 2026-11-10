@@ -106,6 +106,19 @@
     @media (max-width: 980px) { .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } .steps::before { display: none; } }
     @media (max-width: 560px) { .steps { grid-template-columns: 1fr; } }
 
+    .g-rating { display: flex; width: fit-content; max-width: 100%; align-items: center; gap: 22px; margin: 34px auto 38px; padding: 18px 28px 18px 24px; border-radius: 20px; background: var(--white); border: 1px solid rgba(47,95,99,.14); box-shadow: 0 10px 30px rgba(18,50,51,.08); color: var(--ink); text-decoration: none; transition: box-shadow .2s, transform .2s; }
+    .g-rating:hover { box-shadow: 0 14px 36px rgba(18,50,51,.14); transform: translateY(-2px); }
+    .g-left { display: flex; flex-direction: column; align-items: center; padding-right: 22px; border-right: 1px solid rgba(47,95,99,.15); }
+    .g-score { font-family: var(--serif); font-size: 44px; line-height: 1; color: var(--petrol); }
+    .g-stars { position: relative; display: inline-block; font-size: 19px; letter-spacing: 2px; color: #ddd3c2; margin-top: 6px; line-height: 1; }
+    .g-stars::before { content: "★★★★★"; }
+    .g-stars > span { position: absolute; left: 0; top: 0; width: var(--pct); overflow: hidden; white-space: nowrap; color: #c08a3d; }
+    .g-right { display: flex; flex-direction: column; gap: 3px; text-align: left; }
+    .g-title { font-weight: 600; font-size: 17px; color: var(--ink); }
+    .g-count { font-size: 14px; color: var(--text-muted); }
+    .g-more { font-size: 14px; font-weight: 600; color: var(--petrol); margin-top: 4px; }
+    .g-rating:hover .g-more { text-decoration: underline; }
+    @media (max-width: 480px) { .g-rating { flex-direction: column; gap: 12px; padding: 20px 24px; text-align: center; } .g-left { padding: 0 0 12px; border-right: 0; border-bottom: 1px solid rgba(47,95,99,.15); } .g-right { text-align: center; align-items: center; } .g-score { font-size: 40px; } }
     .info { display: grid; grid-template-columns: 1.4fr 1fr; gap: 24px; margin: 28px 0 20px; }
     .info > div { background: var(--white); padding: 26px 24px; border-radius: 22px; }
     .info h3 { font-family: var(--sans); font-weight: 600; font-size: 18px; margin-bottom: 10px; }
@@ -236,6 +249,17 @@
           <li><span class="st-ic" aria-hidden="true"></span><h3>Recherche</h3><p>Wenn nötig, recherchiere ich im Anschluss Hintergrundinformationen zu deinen Fragen.</p></li>
           <li><span class="st-ic" aria-hidden="true"></span><h3>Zweites Gespräch</h3><p>Wir besprechen die Informationen. Du bekommst Anregungen für Ernährung, Alltag und Lebensstil – und Fragen, die du mit deiner Ärztin oder deinem Arzt klären kannst.</p></li>
         </ol>
+        <a class="g-rating" href="https://search.google.com/local/reviews?placeid=ChIJHVvZmepXn0cRDlbZgkvTv4c" target="_blank" rel="noopener" aria-label="Google-Rezensionen von Ina Langer ansehen">
+          <span class="g-left">
+            <span class="g-score" data-g="score">5,0</span>
+            <span class="g-stars" aria-hidden="true" style="--pct:100%" data-g="pct"><span>★★★★★</span></span>
+          </span>
+          <span class="g-right">
+            <span class="g-title">Google-Rezensionen</span>
+            <span class="g-count"><span data-g="count">9</span> Bewertungen · Stand <span data-g="stand">10.11.2026</span></span>
+            <span class="g-more">Alle Rezensionen lesen →</span>
+          </span>
+        </a>
         <div class="info">
           <div>
             <h3>Worum es in den Gesprächen gehen kann</h3>

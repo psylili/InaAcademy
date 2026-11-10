@@ -1,0 +1,26 @@
+name: Google-Bewertungen aktualisieren
+
+on:
+  schedule:
+    - cron: "17 5 * * *"   # täglich ca. 6–7 Uhr deutscher Zeit
+  workflow_dispatch:        # zusätzlich per Knopfdruck startbar
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Bewertungen holen und eintragen
+        env:
+          GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_PLACES_API_KEY }}
+        run: python3 .github/scripts/google_bewertungen.py
+      - name: Änderung speichern
+        run: |
+          if git diff --quiet; then echo "Keine Änderung."; exit 0; fi
+          git config user.name "Bewertungs-Aktualisierung"
+          git config user.email "actions@users.noreply.github.com"
+          git commit -am "Google-Bewertungen automatisch aktualisiert"
+          git push
