@@ -106,6 +106,19 @@
     @media (max-width: 980px) { .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } .steps::before { display: none; } }
     @media (max-width: 560px) { .steps { grid-template-columns: 1fr; } }
 
+    .g-rating { display: flex; width: fit-content; max-width: 100%; align-items: center; gap: 22px; margin: 34px auto 38px; padding: 18px 28px 18px 24px; border-radius: 20px; background: var(--white); border: 1px solid rgba(47,95,99,.14); box-shadow: 0 10px 30px rgba(18,50,51,.08); color: var(--ink); text-decoration: none; transition: box-shadow .2s, transform .2s; }
+    .g-rating:hover { box-shadow: 0 14px 36px rgba(18,50,51,.14); transform: translateY(-2px); }
+    .g-left { display: flex; flex-direction: column; align-items: center; padding-right: 22px; border-right: 1px solid rgba(47,95,99,.15); }
+    .g-score { font-family: var(--serif); font-size: 44px; line-height: 1; color: var(--petrol); }
+    .g-stars { position: relative; display: inline-block; font-size: 19px; letter-spacing: 2px; color: #ddd3c2; margin-top: 6px; line-height: 1; }
+    .g-stars::before { content: "★★★★★"; }
+    .g-stars > span { position: absolute; left: 0; top: 0; width: var(--pct); overflow: hidden; white-space: nowrap; color: #c08a3d; }
+    .g-right { display: flex; flex-direction: column; gap: 3px; text-align: left; }
+    .g-title { font-weight: 600; font-size: 17px; color: var(--ink); }
+    .g-count { font-size: 14px; color: var(--text-muted); }
+    .g-more { font-size: 14px; font-weight: 600; color: var(--petrol); margin-top: 4px; }
+    .g-rating:hover .g-more { text-decoration: underline; }
+    @media (max-width: 480px) { .g-rating { gap: 16px; padding: 16px 18px; } .g-left { padding-right: 16px; } .g-score { font-size: 38px; } }
     .info { display: grid; grid-template-columns: 1.4fr 1fr; gap: 24px; margin: 28px 0 20px; }
     .info > div { background: var(--white); padding: 26px 24px; border-radius: 22px; }
     .info h3 { font-family: var(--sans); font-weight: 600; font-size: 18px; margin-bottom: 10px; }
@@ -142,13 +155,6 @@
     /* Kontakt */
     .contact { background: var(--dark); color: var(--cream); padding: var(--pad); text-align: center; }
     .contact-photo { display: block; width: 170px; height: 170px; border-radius: 50%; object-fit: cover; margin: 0 auto 26px; border: 4px solid var(--cream); box-shadow: 0 10px 30px rgba(0,0,0,.25); }
-    .g-rating { display: flex; width: fit-content; max-width: 100%; align-items: center; gap: 14px; margin: 30px auto 34px; padding: 14px 22px; border-radius: 16px; background: var(--white); border: 1px solid rgba(47,95,99,.18); box-shadow: 0 10px 30px rgba(18,50,51,.07); color: var(--ink); text-decoration: none; text-align: left; transition: box-shadow .2s, transform .2s; }
-    .g-rating:hover { box-shadow: 0 14px 34px rgba(18,50,51,.13); transform: translateY(-1px); }
-    .g-stars { color: #c08a3d; font-size: 20px; letter-spacing: 2px; }
-    .g-score { font-family: var(--serif); font-size: 30px; color: var(--petrol); line-height: 1; }
-    .g-text { font-size: 15px; line-height: 1.35; color: var(--ink); }
-    .g-text small { display: block; font-size: 13px; color: var(--text-muted); margin-top: 2px; }
-    @media (max-width: 480px) { .g-rating { flex-wrap: wrap; justify-content: center; text-align: center; } }
     .contact h2 { color: var(--white); margin-bottom: 16px; }
     .contact p { max-width: 640px; margin: 0 auto 30px; color: #e3e8e2; }
     .contact .small { font-size: 14px; margin: 22px auto 0; opacity: .85; }
@@ -243,10 +249,16 @@
           <li><span class="st-ic" aria-hidden="true"></span><h3>Recherche</h3><p>Wenn nötig, recherchiere ich im Anschluss Hintergrundinformationen zu deinen Fragen.</p></li>
           <li><span class="st-ic" aria-hidden="true"></span><h3>Zweites Gespräch</h3><p>Wir besprechen die Informationen. Du bekommst Anregungen für Ernährung, Alltag und Lebensstil – und Fragen, die du mit deiner Ärztin oder deinem Arzt klären kannst.</p></li>
         </ol>
-        <a class="g-rating" href="https://www.google.com/maps/search/?api=1&amp;query=Ina%20Langer%20Gesundheits-Coach&amp;query_place_id=ChIJHVvZmepXn0cRDlbZgkvTv4c" target="_blank" rel="noopener">
-          <span class="g-stars" aria-hidden="true">★★★★★</span>
-          <span class="g-score">5,0</span>
-          <span class="g-text">aus 9 Bewertungen auf Google<small>Stand: November 2026 · <span style="white-space:nowrap">Bewertungen ansehen →</span></small></span>
+        <a class="g-rating" href="https://search.google.com/local/reviews?placeid=ChIJHVvZmepXn0cRDlbZgkvTv4c" target="_blank" rel="noopener" aria-label="Google-Rezensionen von Ina Langer ansehen">
+          <span class="g-left">
+            <span class="g-score" data-g="score">5,0</span>
+            <span class="g-stars" aria-hidden="true" style="--pct:100%" data-g="pct"><span>★★★★★</span></span>
+          </span>
+          <span class="g-right">
+            <span class="g-title">Google-Rezensionen</span>
+            <span class="g-count"><span data-g="count">9</span> Bewertungen · Stand <span data-g="stand">10.11.2026</span></span>
+            <span class="g-more">Alle Rezensionen lesen →</span>
+          </span>
         </a>
         <div class="info">
           <div>
